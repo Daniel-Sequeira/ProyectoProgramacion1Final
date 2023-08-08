@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Fabián\\source\\repos\\ProyectoProgramacion1Final\\ProyectoFinalProgra1\\ProyectoFinalProgra1.csproj": {}
+    "C:\\Users\\Fabián\\Desktop\\ProyectoProgramacion1Final\\ProyectoFinalProgra1\\ProyectoFinalProgra1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Fabián\\source\\repos\\ProyectoProgramacion1Final\\ProyectoFinalProgra1\\ProyectoFinalProgra1.csproj": {
+    "C:\\Users\\Fabián\\Desktop\\ProyectoProgramacion1Final\\ProyectoFinalProgra1\\ProyectoFinalProgra1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fabián\\source\\repos\\ProyectoProgramacion1Final\\ProyectoFinalProgra1\\ProyectoFinalProgra1.csproj",
+        "projectUniqueName": "C:\\Users\\Fabián\\Desktop\\ProyectoProgramacion1Final\\ProyectoFinalProgra1\\ProyectoFinalProgra1.csproj",
         "projectName": "ProyectoFinalProgra1",
-        "projectPath": "C:\\Users\\Fabián\\source\\repos\\ProyectoProgramacion1Final\\ProyectoFinalProgra1\\ProyectoFinalProgra1.csproj",
+        "projectPath": "C:\\Users\\Fabián\\Desktop\\ProyectoProgramacion1Final\\ProyectoFinalProgra1\\ProyectoFinalProgra1.csproj",
         "packagesPath": "C:\\Users\\Fabián\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fabián\\source\\repos\\ProyectoProgramacion1Final\\ProyectoFinalProgra1\\obj\\",
+        "outputPath": "C:\\Users\\Fabián\\Desktop\\ProyectoProgramacion1Final\\ProyectoFinalProgra1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Fabián\\AppData\\Roaming\\NuGet\\NuGet.Config",
