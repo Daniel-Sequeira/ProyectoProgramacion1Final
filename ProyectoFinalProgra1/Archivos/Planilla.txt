@@ -1,1 +1,6 @@
-﻿
+﻿102340323  Ag.Ventas         2468
+103230464  Administrador     4276
+306110452  Secretaria        2560
+304220213  Bodeguero         2732
+504740325  Supervisor        3276 
+206170777  Conductor         2673
