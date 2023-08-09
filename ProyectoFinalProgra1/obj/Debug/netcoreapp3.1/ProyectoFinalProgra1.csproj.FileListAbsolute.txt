@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\bin\Debug\netcoreapp3.1\ProyectoFinalProgra1.exe
 C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\bin\Debug\netcoreapp3.1\ProyectoFinalProgra1.deps.json
@@ -28,5 +27,3 @@ C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\obj\Deb
 C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\obj\Debug\netcoreapp3.1\ProyectoFinalProgra1.dll
 C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\obj\Debug\netcoreapp3.1\ProyectoFinalProgra1.pdb
 C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\obj\Debug\netcoreapp3.1\ProyectoFinalProgra1.genruntimeconfig.cache
-=======
->>>>>>> ramaDaniel1

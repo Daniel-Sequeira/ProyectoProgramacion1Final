@@ -6,9 +6,9 @@ namespace ProyectoFinalProgra1
     {
         static void Main(string[] args)
         {
-            
+            string __path = @"C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\Archivos\Planilla.txt";
             string path = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
-
+            EscribirDatos escribirDatos = new EscribirDatos(__path);
             LeerDatos leerDatos = new LeerDatos(path);
             int opcion;
             Console.WriteLine("_______________DISTRIBUIDORA DEL NORTE_______________");
@@ -53,7 +53,12 @@ namespace ProyectoFinalProgra1
                     break;
 
                 case (2):
-                    EscribirDatos.AgregarEmpleado();
+                    Console.WriteLine("Ingrese el nombre del empleado");
+                    string nombre = Console.ReadLine();
+                    Console.WriteLine("Ingrese el salario del empleado");
+                    double salario = Convert.ToDouble(Console.ReadLine());
+                    escribirDatos.AgregarEmpleado(nombre, salario);
+                    Console.WriteLine("Empleado agregado y datos guardados. ");
                     break;
 
                 case (3):
