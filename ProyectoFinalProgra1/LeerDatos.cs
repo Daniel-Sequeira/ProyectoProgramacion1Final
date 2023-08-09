@@ -9,22 +9,29 @@ namespace ProyectoFinalProgra1
     {
 
         private string empleados_txt; //Campo de la clase 
+        private string _path; //Campo de la clase 
+        private List<string> listaempleados = new List<string>();
 
-        public LeerDatos(string empleadostxt) //Constructor de la clase que recibe como parametro la variable que contiene la ruta de Empleados.txt
+        public LeerDatos(string path) //Constructor de la clase que recibe como parametro la variable que contiene la ruta de Empleados.txt
         {
-            empleados_txt = empleadostxt;
+            _path = path;
         }
 
-        public void LeerEmpleados()
+        /// <summary>
+        /// Metodo lee Empleados.txt y retorna lista
+        /// </summary>
+        /// <returns></returns>
+        public List<string> LeerEmpleados()
         {
-            using (StreamReader sr = new StreamReader(empleados_txt))
+            using (StreamReader sr = new StreamReader(_path))
             {
                 while (sr.EndOfStream != true)
                 {
-                    
+                    listaempleados.Add(sr.ReadLine());  
                 }
                 sr.Close();
             }
+            return listaempleados;
         }
 
 

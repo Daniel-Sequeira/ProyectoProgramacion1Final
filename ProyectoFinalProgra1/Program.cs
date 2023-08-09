@@ -6,7 +6,10 @@ namespace ProyectoFinalProgra1
     {
         static void Main(string[] args)
         {
-            string empleadostxt = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
+            
+            string path = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
+
+            LeerDatos leerDatos = new LeerDatos(path);
             int opcion;
             Console.WriteLine("_______________DISTRIBUIDORA DEL NORTE_______________");
             Console.WriteLine(" ");
@@ -22,16 +25,17 @@ namespace ProyectoFinalProgra1
                 case (1):
                     Console.Clear();
                     int submenu;
-                    
+
                     Console.WriteLine("1---Todos los Salarios\n");
                     Console.WriteLine("2---Buscar salario por ID\n");
                     Console.WriteLine("3---Salir\n");
                     Console.WriteLine("Selecione 1, 2, o 3");
                     submenu = Convert.ToInt32(Console.ReadLine());
                     switch (submenu)
-                         {
-                            case (1):
+                    {
+                        case (1):
                             Console.WriteLine("Todos los Salarios");
+                            leerDatos.LeerEmpleados();
 
                             break;
 
