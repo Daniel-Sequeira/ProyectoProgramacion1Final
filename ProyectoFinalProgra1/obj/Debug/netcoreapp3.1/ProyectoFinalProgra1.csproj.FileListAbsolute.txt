@@ -1,0 +1,13 @@
+C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\bin\Debug\netcoreapp3.1\ProyectoFinalProgra1.exe
+C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\bin\Debug\netcoreapp3.1\ProyectoFinalProgra1.deps.json
+C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\bin\Debug\netcoreapp3.1\ProyectoFinalProgra1.runtimeconfig.json
+C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\bin\Debug\netcoreapp3.1\ProyectoFinalProgra1.runtimeconfig.dev.json
+C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\bin\Debug\netcoreapp3.1\ProyectoFinalProgra1.dll
+C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\bin\Debug\netcoreapp3.1\ProyectoFinalProgra1.pdb
+C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\obj\Debug\netcoreapp3.1\ProyectoFinalProgra1.csproj.AssemblyReference.cache
+C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\obj\Debug\netcoreapp3.1\ProyectoFinalProgra1.AssemblyInfoInputs.cache
+C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\obj\Debug\netcoreapp3.1\ProyectoFinalProgra1.AssemblyInfo.cs
+C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\obj\Debug\netcoreapp3.1\ProyectoFinalProgra1.csproj.CoreCompileInputs.cache
+C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\obj\Debug\netcoreapp3.1\ProyectoFinalProgra1.dll
+C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\obj\Debug\netcoreapp3.1\ProyectoFinalProgra1.pdb
+C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\obj\Debug\netcoreapp3.1\ProyectoFinalProgra1.genruntimeconfig.cache
