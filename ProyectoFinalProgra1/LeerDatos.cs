@@ -7,21 +7,12 @@ namespace ProyectoFinalProgra1
 {
     public class LeerDatos
     {
-<<<<<<< HEAD
-
-        private string empleados_txt; //Campo de la clase 
-        private string _path; //Campo de la clase 
-        private List<string> listaempleados = new List<string>();
-
-        public LeerDatos(string path) //Constructor de la clase que recibe como parametro la variable que contiene la ruta de Empleados.txt
-=======
         private string _pathEmp; //Campo de la clase 
         string cedula;
         
         private List<string> muestraTodos = new List<string> ();
 
         public LeerDatos(string pathEmp) //Constructor de la clase que recibe como parametro la variable que contiene la ruta de Empleados.txt
->>>>>>> dcbc288030e19ad7588c224bfdd1ae77b1fbe530
         {
             _pathEmp = pathEmp;
             
