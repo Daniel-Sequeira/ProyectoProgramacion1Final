@@ -26,6 +26,13 @@ namespace ProyectoFinalProgra1
     }  
 
     
+<<<<<<< HEAD
 }
+=======
+
+
+
+    }
+>>>>>>> 00218cf6d6739a2f5c3a06dea51287960c0e0831
 
 

@@ -7,6 +7,7 @@ namespace ProyectoFinalProgra1
 {
     public class LeerDatos
     {
+
         private string empleados_txt; //Campo de la clase 
 
         public LeerDatos(string empleadostxt) //Constructor de la clase que recibe como parametro la variable que contiene la ruta de Empleados.txt

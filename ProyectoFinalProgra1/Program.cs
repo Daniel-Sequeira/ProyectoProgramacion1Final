@@ -49,7 +49,7 @@ namespace ProyectoFinalProgra1
                     break;
 
                 case (2):
-
+                    EscribirDatos.AgregarEmpleado();
                     break;
 
                 case (3):
