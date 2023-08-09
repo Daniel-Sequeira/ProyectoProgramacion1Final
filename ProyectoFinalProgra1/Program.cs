@@ -36,13 +36,14 @@ namespace ProyectoFinalProgra1
                     switch (submenu)
                     {
                         case (1):
+                            Console.Clear();
                             Console.WriteLine("Todos los Salarios");
                             leerDatos.LeerTodos();
-
+                            
                             break;
 
                         case (2):
-                            Console.WriteLine("Buscar Salario por ID ");
+                            leerDatos.BuscarSalarioID();
 
                             break;
 
