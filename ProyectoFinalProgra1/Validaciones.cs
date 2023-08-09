@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace ProyectoFinalProgra1
 {
-    class Validaciones
+   public class Validaciones
     {
         public static bool ValidarCedula(string cedula)
         {
@@ -26,6 +26,9 @@ namespace ProyectoFinalProgra1
     }  
 
     
-}
+
+
+
+    }
 
 
