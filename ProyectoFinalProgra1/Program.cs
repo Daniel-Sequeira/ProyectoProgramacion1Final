@@ -22,15 +22,15 @@ namespace ProyectoFinalProgra1
                 case (1):
                     Console.Clear();
                     int submenu;
-                    
+
                     Console.WriteLine("1---Todos los Salarios\n");
                     Console.WriteLine("2---Buscar salario por ID\n");
                     Console.WriteLine("3---Salir\n");
                     Console.WriteLine("Selecione 1, 2, o 3");
                     submenu = Convert.ToInt32(Console.ReadLine());
                     switch (submenu)
-                         {
-                            case (1):
+                    {
+                        case (1):
                             Console.WriteLine("Todos los Salarios");
 
                             break;
