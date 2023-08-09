@@ -7,17 +7,13 @@ namespace ProyectoFinalProgra1
 {
     public class LeerDatos
     {
-<<<<<<< HEAD
 
-        private string empleados_txt; //Campo de la clase 
-=======
-        private string _path; //Campo de la clase 
-        private List<string> listaempleados = new List<string>();
->>>>>>> ramaDaniel1
+        private string _empleados; //Campo de la clase 
+        List<string> listaEmpleados = new List<string>();
 
-        public LeerDatos(string path) //Constructor de la clase que recibe como parametro la variable que contiene la ruta de Empleados.txt
+        public LeerDatos(string empleados) //Constructor de la clase que recibe como parametro la variable que contiene la ruta de Empleados.txt
         {
-            _path = path;
+            _empleados = empleados;
         }
 
         /// <summary>
@@ -26,15 +22,15 @@ namespace ProyectoFinalProgra1
         /// <returns></returns>
         public List<string> LeerEmpleados()
         {
-            using (StreamReader sr = new StreamReader(_path))
+            using (StreamReader sr = new StreamReader(_empleados))
             {
                 while (sr.EndOfStream != true)
                 {
-                    listaempleados.Add(sr.ReadLine());  
+                    listaEmpleados.Add(sr.ReadLine());  
                 }
                 sr.Close();
             }
-            return listaempleados;
+            return listaEmpleados;
         }
 
 

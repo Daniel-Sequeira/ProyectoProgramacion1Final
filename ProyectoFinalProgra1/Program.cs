@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ProyectoFinalProgra1
 {
@@ -7,9 +8,11 @@ namespace ProyectoFinalProgra1
         static void Main(string[] args)
         {
             
-            string path = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
+            string empleados = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
+            LeerDatos leerDatos = new LeerDatos(empleados);
+           
 
-            LeerDatos leerDatos = new LeerDatos(path);
+
             int opcion;
             Console.WriteLine("_______________DISTRIBUIDORA DEL NORTE_______________");
             Console.WriteLine(" ");
