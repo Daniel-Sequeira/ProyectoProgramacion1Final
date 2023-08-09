@@ -7,7 +7,6 @@ namespace ProyectoFinalProgra1
 {
    public class Validaciones
     {
-<<<<<<< HEAD
         public static bool ValidarCedula(string cedula)
         {
             string patron = @"^\d{9}$";
@@ -19,23 +18,14 @@ namespace ProyectoFinalProgra1
             string patron = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
             return Regex.IsMatch(correo, patron);
         }
-=======
->>>>>>> ramaDaniel1
 
 
 
 
 
-<<<<<<< HEAD
     }  
 
     
-=======
-
-
-
-    }
->>>>>>> ramaDaniel1
 }
 
 
