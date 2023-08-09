@@ -8,6 +8,7 @@ namespace ProyectoFinalProgra1
     public class LeerDatos
     {
         private string _pathEmp; //Campo de la clase 
+        string cedula;
         
         private List<string> muestraTodos = new List<string> ();
 
@@ -43,6 +44,8 @@ namespace ProyectoFinalProgra1
         public void BuscarSalarioID()
         {
             Console.WriteLine("Ingrese el número de cédula ");
+            cedula = Console.ReadLine();
+            
         }
 
 
