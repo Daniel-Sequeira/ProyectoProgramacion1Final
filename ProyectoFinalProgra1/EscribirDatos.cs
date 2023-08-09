@@ -4,15 +4,8 @@ using System.Text;
 
 namespace ProyectoFinalProgra1
 {
-   public class Validaciones
+    public class EscribirDatos
     {
-
-
-
-
-
-
-
 
     }
 }
