@@ -6,7 +6,6 @@ namespace ProyectoFinalProgra1
 {
     public class EscribirDatos
     {
-<<<<<<< HEAD
         public static void AgregarEmpleado()
         {
             Console.WriteLine("Ingrese el nombre del empleado: ");
@@ -30,8 +29,6 @@ namespace ProyectoFinalProgra1
                 Console.WriteLine("Los datos no han sido guardados");
             }
         }
-=======
 
->>>>>>> e4d52fa49d360937c594ae9d713df75249ef22ac
     }
 }
