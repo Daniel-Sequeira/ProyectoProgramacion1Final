@@ -1,12 +1,18 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> ramaDaniel1
 C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\bin\Debug\netcoreapp3.1\ProyectoFinalProgra1.exe
 C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\bin\Debug\netcoreapp3.1\ProyectoFinalProgra1.deps.json
 C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\bin\Debug\netcoreapp3.1\ProyectoFinalProgra1.runtimeconfig.json
 C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\bin\Debug\netcoreapp3.1\ProyectoFinalProgra1.runtimeconfig.dev.json
 C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\bin\Debug\netcoreapp3.1\ProyectoFinalProgra1.dll
 C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\bin\Debug\netcoreapp3.1\ProyectoFinalProgra1.pdb
+<<<<<<< HEAD
+>>>>>>> ramaDaniel1
+=======
 >>>>>>> ramaDaniel1
 C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\obj\Debug\netcoreapp3.1\ProyectoFinalProgra1.csproj.AssemblyReference.cache
 C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\obj\Debug\netcoreapp3.1\ProyectoFinalProgra1.AssemblyInfoInputs.cache
@@ -15,6 +21,7 @@ C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\obj\Debug\netcoreap
 C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\obj\Debug\netcoreapp3.1\ProyectoFinalProgra1.dll
 C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\obj\Debug\netcoreapp3.1\ProyectoFinalProgra1.pdb
 C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\obj\Debug\netcoreapp3.1\ProyectoFinalProgra1.genruntimeconfig.cache
+<<<<<<< HEAD
 C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\bin\Debug\netcoreapp3.1\ProyectoFinalProgra1.exe
 C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\bin\Debug\netcoreapp3.1\ProyectoFinalProgra1.deps.json
 C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\bin\Debug\netcoreapp3.1\ProyectoFinalProgra1.runtimeconfig.json
@@ -28,5 +35,7 @@ C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\obj\Deb
 C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\obj\Debug\netcoreapp3.1\ProyectoFinalProgra1.dll
 C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\obj\Debug\netcoreapp3.1\ProyectoFinalProgra1.pdb
 C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\obj\Debug\netcoreapp3.1\ProyectoFinalProgra1.genruntimeconfig.cache
+=======
+>>>>>>> ramaDaniel1
 =======
 >>>>>>> ramaDaniel1
