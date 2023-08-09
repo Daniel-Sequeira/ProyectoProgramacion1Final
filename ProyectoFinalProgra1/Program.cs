@@ -6,6 +6,7 @@ namespace ProyectoFinalProgra1
     {
         static void Main(string[] args)
         {
+            string empleadostxt = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
             int opcion;
             Console.WriteLine("_______________DISTRIBUIDORA DEL NORTE_______________");
             Console.WriteLine(" ");
