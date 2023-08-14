@@ -10,9 +10,13 @@ namespace ProyectoFinalProgra1
         private string _pathEmp; //Campo de la clase 
         string cedula;
         
-        private List<string> muestraTodos = new List<string> ();
+        private List<string> muestraTodos = new List<string> (); //Instancia Lista Todos
 
-        public LeerDatos(string pathEmp) //Constructor de la clase que recibe como parametro la variable que contiene la ruta de Empleados.txt
+        /// <summary>
+        /// Constructor de la clase recibe como parametro la ruta del archivo Empleados.txt
+        /// </summary>
+        /// <param name="pathEmp"></param>
+        public LeerDatos(string pathEmp) 
         {
             _pathEmp = pathEmp;
             
@@ -22,21 +26,23 @@ namespace ProyectoFinalProgra1
         /// Metodo lee Empleados.txt y retorna lista
         /// </summary>
         /// <returns></returns>
-        public void LeerTodos()
+        public List<string> LeerTodos()
         {
+            
             using (StreamReader sr = new StreamReader(_pathEmp))
             {
-                while (sr.EndOfStream != true)
+                if (File.Exists(_pathEmp))
                 {
-                    muestraTodos.Add(sr.ReadLine());
+                    sr.ReadLine();
+                    while (sr.EndOfStream != true)
+                    {
+                        muestraTodos.Add(sr.ReadLine());
+                    }
+                    sr.Close();
                 }
-                  
-                foreach (var todos in muestraTodos)
-                {
-                  Console.WriteLine(todos);     
-                }
-              
-                 sr.Close();
+                else
+                    Console.WriteLine("Error No se encuentra el archivo Empleados.txt en la ruta establecida");
+                return muestraTodos;
             }
 
         }

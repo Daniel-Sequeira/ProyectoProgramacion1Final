@@ -10,7 +10,7 @@ namespace ProyectoFinalProgra1
             
             string pathEmp = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
           
-            LeerDatos leerDatos = new LeerDatos(pathEmp); //Instancia de la Clase leer Datos para llamar sus metodos.
+            LeerDatos lectura = new LeerDatos(pathEmp); //Instancia de la Clase leer Datos para llamar sus metodos.
 
             int opcion;
             Console.WriteLine("_______________DISTRIBUIDORA DEL NORTE_______________");
@@ -37,15 +37,19 @@ namespace ProyectoFinalProgra1
                         case (1):
                             Console.Clear();
                             Console.WriteLine("________________Todos los Salarios______________");
-                            string[] tabla = { "Cedula","Nombre Completo", "Horas Trabajadas", "Salario/Hora", "Salario Bruto", "Deducciones","Salario Neto" };
-                            Console.WriteLine($"{tabla[0]} {tabla[1],20} {tabla[2],20} {tabla[3],15} {tabla[4],15} {tabla[5],15} {tabla[6],15}");
+                            string[] tabla = { "Cedula","Nombre", "Apellidos", "Horas Trabajadas", "Salario/Hora", "Salario Bruto", "Deducciones","Salario Neto" };
+                            Console.WriteLine($"{tabla[0]} {tabla[1],9} {tabla[2],10} {tabla[3],15} {tabla[4],15} {tabla[5],15} {tabla[6],15}");
 
-                            leerDatos.LeerTodos();
-                            
+                            foreach (var todos in lectura.LeerTodos()) 
+                            {
+                                Console.WriteLine(todos);
+                            }
+                            Console.WriteLine("¿Desea Generar Reporte? S o N");
+
                             break;
 
                         case (2):
-                            leerDatos.BuscarSalarioID();
+                            lectura.BuscarSalarioID();
 
                             break;
 
