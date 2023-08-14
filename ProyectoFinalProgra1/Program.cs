@@ -7,7 +7,10 @@ namespace ProyectoFinalProgra1
     {
         static void Main(string[] args)
         {
-            
+            string __path = @"C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\Archivos\Planilla.txt";
+
+            EscribirDatos escribirDatos = new EscribirDatos(__path);
+
             string pathEmp = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
           
             LeerDatos lectura = new LeerDatos(pathEmp); //Instancia de la Clase leer Datos para llamar sus metodos.
@@ -62,7 +65,12 @@ namespace ProyectoFinalProgra1
                     break;
 
                 case (2):
-                    EscribirDatos.AgregarEmpleado();
+                    Console.WriteLine("Ingrese el nombre del empleado");
+                    string nombre = Console.ReadLine();
+                    Console.WriteLine("Ingrese el salario del empleado");
+                    double salario = Convert.ToDouble(Console.ReadLine());
+                    escribirDatos.AgregarEmpleado(nombre, salario);
+                    Console.WriteLine("Empleado agregado y datos guardados. ");
                     break;
 
                 case (3):
