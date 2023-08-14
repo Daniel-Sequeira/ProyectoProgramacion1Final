@@ -30,5 +30,10 @@ namespace ProyectoFinalProgra1
             }
         }
 
+        public void AlmacenarDatosTodos()
+        {
+            
+        }
+
     }
 }
