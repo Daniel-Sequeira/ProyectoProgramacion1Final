@@ -8,18 +8,23 @@ namespace ProyectoFinalProgra1
         static string pathEmp = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
         static  string pathPlan = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla.txt";
 
-        List<string> datosEmp = new List<string>(); //Instancia Lista Todos
-        List<string> datosPlan = new List<string>();
-        List<string> infoTodos = new List<string>();
-
         static void Main(string[] args)
         {
-            
+
+            List<string> datosEmp = new List<string>(); //Instancias de Listas 
+            List<string> datosPlan = new List<string>();
+            List<string> subEmp = new List<string>();
+            List<string> subPlan = new List<string>();
 
             LeerDatos lectura = new LeerDatos(pathEmp,pathPlan); //Instancia de la Clase leer Datos para llamar sus metodos.
             EscribirDatos escritura = new EscribirDatos();
 
-            
+            datosEmp = lectura.LeerArchivo(pathEmp); //Almaacenar en las listas los datos leidos por metodo LeerArchivo segun path enviado
+            datosPlan = lectura.LeerArchivo(pathPlan);
+            subEmp = datosEmp.GetRange(1,3);
+            subPlan = datosPlan.GetRange(2,3);
+
+
 
             int opcion;
             Console.WriteLine("_______________DISTRIBUIDORA DEL NORTE_______________");
@@ -48,12 +53,13 @@ namespace ProyectoFinalProgra1
                             Console.WriteLine("________________Todos los Salarios______________");
                             string[] tabla = { "Cedula","Nombre", "Apellidos", "Horas Trabajadas", "Salario/Hora", "Salario Bruto", "Deducciones","Salario Neto" };
                             Console.WriteLine($"{tabla[0]} {tabla[1],9} {tabla[2],10} {tabla[3],15} {tabla[4],15} {tabla[5],15} {tabla[6],15}");
-
-                            foreach (var todos in lectura.LeerArchivo(pathEmp)) 
+                            foreach (var item in subEmp)
                             {
-                                Console.WriteLine(todos);
+                                Console.WriteLine(item);
                             }
-                            Console.WriteLine("¿Desea Generar Reporte? S o N");
+
+                            
+                         
 
                             break;
                             

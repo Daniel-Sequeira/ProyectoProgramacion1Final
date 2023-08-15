@@ -1,17 +1,7 @@
-<<<<<<< HEAD
-﻿ID Puesto Puesto Salario/Hora Horas/Trab Rebajos
+ID Puesto Puesto Salario/Hora Horas/Trab Rebajos
 102340323 Ag.Ventas 2468 48 9%
 103230464 Administrador 4276 44 14%
 306110452 Secretaria 2560 44 10%
 304220213 Bodeguero 2732 42 8%
 504740325 Supervisor 3276 48 12%
 206170777 Conductor 2673 42 10%
-=======
-﻿102340323  Ag.Ventas         2468
-103230464  Administrador     4276
-306110452  Secretaria        2560
-304220213  Bodeguero         2732
-504740325  Supervisor        3276 
-206170777  Conductor         2673
-
->>>>>>> fa47018141295913adb53a5ec4037622e61abd5e

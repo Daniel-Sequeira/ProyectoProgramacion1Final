@@ -33,6 +33,7 @@ namespace ProyectoFinalProgra1
 
             using (StreamReader sr = new StreamReader(path))
             {
+                datos = new List<string>();
                 if (File.Exists(path))
                 {
                     sr.ReadLine();
@@ -49,15 +50,22 @@ namespace ProyectoFinalProgra1
 
         }
 
-
-            public void CrearArchivoTodos(string path)
+        /// <summary>
+        /// Metodo para generar un archivo segun path enviado por parámetro
+        /// </summary>
+        /// <param name="path"></param>
+            public void CrearArchivo(string path,List<string>datosP)
             {
                using (StreamWriter swf = File.CreateText(path))
                {
-                     swf.WriteLine("hola");
+                foreach (var dato in datosP)
+                { 
+                    swf.WriteLine(dato);
 
                      swf.Close();
 
+                }
+                   
                }
             }
 
