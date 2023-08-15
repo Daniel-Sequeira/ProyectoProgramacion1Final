@@ -7,12 +7,6 @@ namespace ProyectoFinalProgra1
 {
     public class EscribirDatos
     {
-        private string _pathEmp; //Campo de la clase 
-        private string _pathPlan;
-
-
-        private List<string> info;//Lista que contiene datos mixtos de ambos txt
-
             public static void AgregarEmpleado()
         {
             Console.WriteLine("Ingrese el nombre del empleado: ");
@@ -38,18 +32,6 @@ namespace ProyectoFinalProgra1
 
         }
 
-        public void GenerarArchivoTodos(string _pathEmp, List<string> info)
-        {
-            using (StreamWriter swf = File.CreateText(_pathEmp))
-            {
-                swf.WriteLine("hola");
-
-                swf.Close();
-
-            }
-
-
-        }
 
 
     }
