@@ -5,8 +5,12 @@ namespace ProyectoFinalProgra1
 {
     class Program
     {
+        static string pathEmp = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
+        static  string pathPlan = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla.txt";
+
         static void Main(string[] args)
         {
+<<<<<<< HEAD
             string __path = @"C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\Archivos\Planilla.txt";
 
             EscribirDatos escribirDatos = new EscribirDatos(__path);
@@ -14,6 +18,12 @@ namespace ProyectoFinalProgra1
             string pathEmp = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
           
             LeerDatos lectura = new LeerDatos(pathEmp); //Instancia de la Clase leer Datos para llamar sus metodos.
+=======
+            
+
+            LeerDatos lectura = new LeerDatos(pathEmp,pathPlan); //Instancia de la Clase leer Datos para llamar sus metodos.
+            EscribirDatos escritura = new EscribirDatos();
+>>>>>>> ramaDaniel1
 
             int opcion;
             Console.WriteLine("_______________DISTRIBUIDORA DEL NORTE_______________");
@@ -43,13 +53,14 @@ namespace ProyectoFinalProgra1
                             string[] tabla = { "Cedula","Nombre", "Apellidos", "Horas Trabajadas", "Salario/Hora", "Salario Bruto", "Deducciones","Salario Neto" };
                             Console.WriteLine($"{tabla[0]} {tabla[1],9} {tabla[2],10} {tabla[3],15} {tabla[4],15} {tabla[5],15} {tabla[6],15}");
 
-                            foreach (var todos in lectura.LeerTodos()) 
+                            foreach (var todos in lectura.LeerPlanilla()) 
                             {
                                 Console.WriteLine(todos);
                             }
                             Console.WriteLine("¿Desea Generar Reporte? S o N");
 
                             break;
+                            
 
                         case (2):
                             lectura.BuscarSalarioID();

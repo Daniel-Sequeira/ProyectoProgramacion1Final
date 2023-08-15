@@ -1,6 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> main
+=======
+>>>>>>> ramaDaniel1
 C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\bin\Debug\netcoreapp3.1\ProyectoFinalProgra1.exe
 C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\bin\Debug\netcoreapp3.1\ProyectoFinalProgra1.deps.json
 C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\bin\Debug\netcoreapp3.1\ProyectoFinalProgra1.runtimeconfig.json
