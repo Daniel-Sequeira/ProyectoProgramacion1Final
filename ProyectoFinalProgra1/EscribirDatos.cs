@@ -8,6 +8,7 @@ namespace ProyectoFinalProgra1
     public class EscribirDatos
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         private string __path;
         public EscribirDatos(string path)
 =======
@@ -17,6 +18,8 @@ namespace ProyectoFinalProgra1
 
         private List<string> info;//Lista que contiene datos mixtos de ambos txt
 
+=======
+>>>>>>> ramaDaniel1
             public static void AgregarEmpleado()
 >>>>>>> ramaDaniel1
         {
@@ -33,18 +36,6 @@ namespace ProyectoFinalProgra1
 
         }
 
-        public void GenerarArchivoTodos(string _pathEmp, List<string> info)
-        {
-            using (StreamWriter swf = File.CreateText(_pathEmp))
-            {
-                swf.WriteLine("hola");
-
-                swf.Close();
-
-            }
-
-
-        }
 
 
     }

@@ -5,81 +5,67 @@ using System.IO;
 
 namespace ProyectoFinalProgra1
 {
+    
     public class LeerDatos
     {
-        private string _pathEmp; //Campo de la clase 
-        private string _pathPlan;
-        string cedula;
-        
-        private List<string> datosEmp = new List<string> (); //Instancia Lista Todos
-        private List<string> datosPlan = new List<string>();
+        private string path; //Campo de la clase.
+        private List<string> datos; //Declaración Lista datos
 
         /// <summary>
-        /// Constructor de la clase recibe como parametro la ruta del archivo Empleados.txt y Planilla.txt
+        /// Constructor de la clase asisgna valores a path.
         /// </summary>
         /// <param name="pathEmp"></param>
         /// <param name="pathPlan"></param>
-        public LeerDatos(string pathEmp, string pathPlan) 
+        public LeerDatos(string pathEmp,string pathPlan)
         {
-            _pathEmp = pathEmp;
-            _pathPlan = pathPlan;
-            
+            path = pathEmp;
+            path = pathPlan;
+
         }
 
         /// <summary>
-        /// Metodo lee Empleados.txt y retorna lista
+        /// Metodo lee Archivos.txt y retorna lista, este codigo se reutiiza de acuerdo al parametro path enviado.
         /// </summary>
+        /// <param name="path"></param>
         /// <returns></returns>
-        public List<string> LeerEmpleados()
+        public List<string> LeerArchivo(string path)
         {
-            
-            using (StreamReader sr = new StreamReader(_pathEmp))
+
+            using (StreamReader sr = new StreamReader(path))
             {
-                if (File.Exists(_pathEmp))
+                if (File.Exists(path))
                 {
                     sr.ReadLine();
                     while (sr.EndOfStream != true)
                     {
-                        datosEmp.Add(sr.ReadLine());
+                        datos.Add(sr.ReadLine());
                     }
                     sr.Close();
                 }
                 else
-                    Console.WriteLine("Error No se encuentra el archivo Empleados.txt en la ruta establecida");
-                return datosEmp;
+                    Console.WriteLine("Error No se encuentra el archivo txt en la ruta establecida");
+                return datos;
             }
 
         }
-        /// <summary>
-        /// Metodo de lectura de Planilla.txt que retorna una lista
-        /// </summary>
-        /// <returns></returns>
-        public List<string> LeerPlanilla()
-        {
 
-            using (StreamReader sr = new StreamReader(_pathPlan))
+
+            public void CrearArchivoTodos(string path)
             {
-                if (File.Exists(_pathPlan))
-                {
-                    sr.ReadLine();
-                    while (sr.EndOfStream != true)
-                    {
-                        datosPlan.Add(sr.ReadLine());
-                    }
-                    sr.Close();
-                }
-                else
-                    Console.WriteLine("Error No se encuentra el archivo Planilla.txt en la ruta establecida");
-                return datosPlan;
-            }
+               using (StreamWriter swf = File.CreateText(path))
+               {
+                     swf.WriteLine("hola");
 
-        }
+                     swf.Close();
+
+               }
+            }
 
 
         public void BuscarSalarioID()
         {
             Console.WriteLine("Ingrese el número de cédula ");
-            cedula = Console.ReadLine();
+          
 
 
             
