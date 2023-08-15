@@ -7,20 +7,18 @@ namespace ProyectoFinalProgra1
 {
     public class EscribirDatos
     {
-        private string __path;
-        public EscribirDatos(string path)
-        {
-            __path = path;
-        }
-
+       
         public void AgregarEmpleado(string nombre, double salario)
         {
-            using (StreamWriter sw = new StreamWriter(__path, true))
+            using (StreamWriter sw = new StreamWriter(nombre))
             {
                 sw.WriteLine("Nombre: +" + nombre + " - Salario: " + salario);
                 sw.Close();
             }
+
         }
+
+
 
     }
 }

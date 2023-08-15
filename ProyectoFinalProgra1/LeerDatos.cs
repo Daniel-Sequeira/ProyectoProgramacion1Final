@@ -5,46 +5,77 @@ using System.IO;
 
 namespace ProyectoFinalProgra1
 {
+    
     public class LeerDatos
     {
-        private string _pathEmp; //Campo de la clase 
-        string cedula;
-        
-        private List<string> muestraTodos = new List<string> ();
+        private string path; //Campo de la clase.
+        private List<string> datos; //Declaración Lista datos
 
-        public LeerDatos(string pathEmp) //Constructor de la clase que recibe como parametro la variable que contiene la ruta de Empleados.txt
+        /// <summary>
+        /// Constructor de la clase asisgna valores a path.
+        /// </summary>
+        /// <param name="pathEmp"></param>
+        /// <param name="pathPlan"></param>
+        public LeerDatos(string pathEmp,string pathPlan)
         {
-            _pathEmp = pathEmp;
-            
+            path = pathEmp;
+            path = pathPlan;
+
         }
 
         /// <summary>
-        /// Metodo lee Empleados.txt y retorna lista
+        /// Metodo lee Archivos.txt y retorna lista, este codigo se reutiiza de acuerdo al parametro path enviado.
         /// </summary>
+        /// <param name="path"></param>
         /// <returns></returns>
-        public void LeerTodos()
+        public List<string> LeerArchivo(string path)
         {
-            using (StreamReader sr = new StreamReader(_pathEmp))
+
+            using (StreamReader sr = new StreamReader(path))
             {
-                while (sr.EndOfStream != true)
+                datos = new List<string>();
+                if (File.Exists(path))
                 {
-                    muestraTodos.Add(sr.ReadLine());
+                    sr.ReadLine();
+                    while (sr.EndOfStream != true)
+                    {
+                        datos.Add(sr.ReadLine());
+                    }
+                    sr.Close();
                 }
-                  
-                foreach (var todos in muestraTodos)
-                {
-                  Console.WriteLine(todos);     
-                }
-              
-                 sr.Close();
+                else
+                    Console.WriteLine("Error No se encuentra el archivo txt en la ruta establecida");
+                return datos;
             }
 
         }
 
+        /// <summary>
+        /// Metodo para generar un archivo segun path enviado por parámetro
+        /// </summary>
+        /// <param name="path"></param>
+            public void CrearArchivo(string path,List<string>datosP)
+            {
+               using (StreamWriter swf = File.CreateText(path))
+               {
+                foreach (var dato in datosP)
+                { 
+                    swf.WriteLine(dato);
+
+                     swf.Close();
+
+                }
+                   
+               }
+            }
+
+
         public void BuscarSalarioID()
         {
             Console.WriteLine("Ingrese el número de cédula ");
-            cedula = Console.ReadLine();
+          
+
+
             
         }
 

@@ -5,15 +5,26 @@ namespace ProyectoFinalProgra1
 {
     class Program
     {
+        static string pathEmp = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
+        static  string pathPlan = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla.txt";
+
         static void Main(string[] args)
         {
-            string __path = @"C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\Archivos\Planilla.txt";
 
-            EscribirDatos escribirDatos = new EscribirDatos(__path);
+            List<string> datosEmp = new List<string>(); //Instancias de Listas 
+            List<string> datosPlan = new List<string>();
+            List<string> subEmp = new List<string>();
+            List<string> subPlan = new List<string>();
 
-            string pathEmp = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
-          
-            LeerDatos leerDatos = new LeerDatos(pathEmp); //Instancia de la Clase leer Datos para llamar sus metodos.
+            LeerDatos lectura = new LeerDatos(pathEmp,pathPlan); //Instancia de la Clase leer Datos para llamar sus metodos.
+            EscribirDatos escritura = new EscribirDatos();
+
+            datosEmp = lectura.LeerArchivo(pathEmp); //Almaacenar en las listas los datos leidos por metodo LeerArchivo segun path enviado
+            datosPlan = lectura.LeerArchivo(pathPlan);
+            subEmp = datosEmp.GetRange(1,3);
+            subPlan = datosPlan.GetRange(2,3);
+
+
 
             int opcion;
             Console.WriteLine("_______________DISTRIBUIDORA DEL NORTE_______________");
@@ -40,15 +51,21 @@ namespace ProyectoFinalProgra1
                         case (1):
                             Console.Clear();
                             Console.WriteLine("________________Todos los Salarios______________");
-                            string[] tabla = { "Cedula","Nombre Completo", "Horas Trabajadas", "Salario/Hora", "Salario Bruto", "Deducciones","Salario Neto" };
-                            Console.WriteLine($"{tabla[0]} {tabla[1],20} {tabla[2],20} {tabla[3],15} {tabla[4],15} {tabla[5],15} {tabla[6],15}");
+                            string[] tabla = { "Cedula","Nombre", "Apellidos", "Horas Trabajadas", "Salario/Hora", "Salario Bruto", "Deducciones","Salario Neto" };
+                            Console.WriteLine($"{tabla[0]} {tabla[1],9} {tabla[2],10} {tabla[3],15} {tabla[4],15} {tabla[5],15} {tabla[6],15}");
+                            foreach (var item in subEmp)
+                            {
+                                Console.WriteLine(item);
+                            }
 
-                            leerDatos.LeerTodos();
                             
+                         
+
                             break;
+                            
 
                         case (2):
-                            leerDatos.BuscarSalarioID();
+                            lectura.BuscarSalarioID();
 
                             break;
 
@@ -65,7 +82,7 @@ namespace ProyectoFinalProgra1
                     string nombre = Console.ReadLine();
                     Console.WriteLine("Ingrese el salario del empleado");
                     double salario = Convert.ToDouble(Console.ReadLine());
-                    escribirDatos.AgregarEmpleado(nombre, salario);
+                    escritura.AgregarEmpleado( nombre, salario);
                     Console.WriteLine("Empleado agregado y datos guardados. ");
                     break;
 
