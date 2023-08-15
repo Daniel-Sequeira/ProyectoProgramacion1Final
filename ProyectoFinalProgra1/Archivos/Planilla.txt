@@ -6,7 +6,7 @@
 504740325  Supervisor        3276 
 206170777  Conductor         2673
 
-Nombre: +Jairo - Salario: 789
+
 =======
 ID Puesto Puesto Salario/Hora Horas/Trab Rebajos
 102340323 Ag.Ventas 2468 48 9%
