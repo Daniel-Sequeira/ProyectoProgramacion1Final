@@ -16,4 +16,4 @@ ID Puesto Puesto Salario/Hora Horas/Trab Rebajos
 504740325 Supervisor 3276 48 12%
 206170777 Conductor 2673 42 10%
 
-Yo || Arroz || 87 || 65 || 64
+

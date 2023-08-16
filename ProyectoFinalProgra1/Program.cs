@@ -5,8 +5,8 @@ namespace ProyectoFinalProgra1
 {
     class Program
     {
-        static string pathEmp = @"c:\users\fabián\desktop\proyectoprogramacion1final\ProyectoFinalProgra1\Archivos\Empleados.txt";
-        static  string pathPlan = @"c:\users\fabián\desktop\proyectoprogramacion1final\ProyectoFinalProgra1\Archivos\Planilla.txt";
+        static string pathEmp = @"C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\Archivos\Empleados.txt";
+        static  string pathPlan = @"C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\Archivos\Planilla.txt";
 
         static void Main(string[] args)
         {
