@@ -19,6 +19,16 @@ namespace ProyectoFinalProgra1
             return Regex.IsMatch(correo, patron);
         }
 
+        public static bool CamposVacios(string input)
+        {
+            return !string.IsNullOrWhiteSpace(input);
+        }
+
+        public static bool CedulaIdIguales(string cedula, string id)
+        {
+            return cedula == id;
+        }
+
 
 
 
