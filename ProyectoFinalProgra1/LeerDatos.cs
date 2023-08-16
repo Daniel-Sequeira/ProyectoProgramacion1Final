@@ -18,11 +18,11 @@ namespace ProyectoFinalProgra1
         /// </summary>
         /// <param name="pathEmp"></param>
         /// <param name="pathPlan"></param>
-        public LeerDatos(string pathEmp,string pathPlan)
+        public LeerDatos(string pathEmp,string pathPlan, string pathTodos)
         {
             path = pathEmp;
             path = pathPlan;
-
+            path = pathTodos;
         }
 
         /// <summary>
@@ -63,17 +63,14 @@ namespace ProyectoFinalProgra1
                using (StreamWriter swf = File.CreateText(path))
                {
                  foreach (var dato in datosP)
-                 { 
+                 {
                     swf.WriteLine(dato);
-
-                     swf.Close();
-
                  }
-          
-               }
+                    swf.Close();
+            }
             }
 
-
-
+        
+        
     }
 }
