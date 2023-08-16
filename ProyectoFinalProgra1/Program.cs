@@ -5,39 +5,19 @@ namespace ProyectoFinalProgra1
 {
     class Program
     {
-<<<<<<< HEAD
         static string pathEmp = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
         static  string pathPlan = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla.txt";
         static string pathTodos = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla_del_mes.txt";
-=======
-        static string pathEmp = @"C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\Archivos\Empleados.txt";
-        static  string pathPlan = @"C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\Archivos\Planilla.txt";
-
->>>>>>> c3ae0cb98b582866b3dee5713ecb67a1bcedb370
         static void Main(string[] args)
         {
 
             List<string> datosEmp = new List<string>(); //Instancias de Listas 
             List<string> datosPlan = new List<string>();
-<<<<<<< HEAD
            
            
            
             LeerDatos lectura = new LeerDatos(pathEmp,pathPlan,pathTodos); //Instancia de la Clase leer Datos para llamar sus metodos.
-            EscribirDatos escritura = new EscribirDatos();
-=======
-            List<string> datosMixtos = new List<string>();
-
-            string empleados;
-            string planilla;
-            int valorHora;
-            int horasTrab;
-            int salarioBruto;
-            
-
-            LeerDatos lectura = new LeerDatos(pathEmp,pathPlan); //Instancia de la Clase leer Datos para llamar sus metodos.
-            EscribirDatos escritura = new EscribirDatos(pathEmp, pathPlan);
->>>>>>> c3ae0cb98b582866b3dee5713ecb67a1bcedb370
+            EscribirDatos escritura = new EscribirDatos(pathEmp,pathPlan);
 
             datosEmp = lectura.LeerArchivo(pathEmp); //Almacenar en las listas los datos leidos por metodo LeerArchivo segun path enviado
             datosPlan = lectura.LeerArchivo(pathPlan);
@@ -90,7 +70,7 @@ namespace ProyectoFinalProgra1
                     submenu = Convert.ToInt32(Console.ReadLine());
                     switch (submenu)
                     {
-                        case (1):
+                        case (1)://Mostrar salarios en pantalla y pregunta si desea generar reporte de estos.
                             Console.Clear();
                             Console.WriteLine("________________Todos los Salarios______________");
                             string[] tabla = { "Nombre", "Apellidos", "Horas Trabajadas", "Salario/Hora", "Salario Bruto", "Rebajos", "Salario Neto" };
@@ -111,12 +91,12 @@ namespace ProyectoFinalProgra1
                             break;
                             
 
-                        case (2):
+                        case (2)://Buscar salario por ID y reporte de un funcionario
                             
 
                             break;
 
-                        case (3):
+                        case (3): //Sale completamente del programa
                             Environment.Exit(0);
                             break;
 
