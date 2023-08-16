@@ -7,45 +7,46 @@ namespace ProyectoFinalProgra1
     {
         static string pathEmp = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
         static  string pathPlan = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla.txt";
-
+        static string pathTodos = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla_del_mes.txt";
         static void Main(string[] args)
         {
 
             List<string> datosEmp = new List<string>(); //Instancias de Listas 
             List<string> datosPlan = new List<string>();
-            List<string> datosMixtos = new List<string>();
-
-            string empleados;
-            string planilla;
-            int valorHora;
-            int horasTrab;
-            int salarioBruto;
-            
-
-            LeerDatos lectura = new LeerDatos(pathEmp,pathPlan); //Instancia de la Clase leer Datos para llamar sus metodos.
+           
+           
+           
+            LeerDatos lectura = new LeerDatos(pathEmp,pathPlan,pathTodos); //Instancia de la Clase leer Datos para llamar sus metodos.
             EscribirDatos escritura = new EscribirDatos();
 
             datosEmp = lectura.LeerArchivo(pathEmp); //Almacenar en las listas los datos leidos por metodo LeerArchivo segun path enviado
             datosPlan = lectura.LeerArchivo(pathPlan);
 
-            
-                empleados = datosEmp.Find(n => n.Contains(" "));
-                planilla = datosPlan.Find(n => n.Contains(" "));
-                string[] arregloEmp = empleados.Split(" ");
-                string[] arregloPlan = planilla.Split(" ");
-                valorHora = int.Parse(arregloPlan[2]);
-                horasTrab = int.Parse(arregloPlan[3]);
-                salarioBruto = valorHora * horasTrab;
-
-
-
+            List<string> datosMixtos = new List<string>();
+           
+            for (int i = 0; i < datosEmp.Count; i++)
+            {
+                string[] arregloEmp = datosEmp[i].Split(" ");
+                string[] arregloPlan = datosPlan[i].Split(" ");
+                int salaB = Convert.ToInt32(arregloPlan[2])* Convert.ToInt32(arregloPlan[3]);
+                string valorRebajo = arregloPlan[4].Replace("%", " ");
+                double rebajo = (double.Parse(valorRebajo)/100) * salaB;
+                double salNet = salaB - rebajo;
                 datosMixtos.Add
-                (arregloEmp[1] + " " + arregloEmp[2] + " " + arregloEmp[3] + " " + arregloPlan[3] + " " + arregloPlan[2]);
+                (
+                  arregloEmp[1] + " " +
+                  arregloEmp[2] + " " +
+                  arregloEmp[3] + " " +
+                  arregloPlan[3] + " " +
+                  arregloPlan[2] + " " +
+                  salaB.ToString() + " " +
+                  rebajo.ToString() + " " +
+                  salNet.ToString()
 
-            
+                 ) ;
+            }
 
-
-
+         
 
             int opcion;
              Console.WriteLine("_______________DISTRIBUIDORA DEL NORTE_______________");
@@ -72,10 +73,21 @@ namespace ProyectoFinalProgra1
                         case (1):
                             Console.Clear();
                             Console.WriteLine("________________Todos los Salarios______________");
-                            string[] tabla = { "Cedula","Nombre", "Apellidos", "Horas Trabajadas", "Salario/Hora", "Salario Bruto", "Deducciones","Salario Neto" };
-                            Console.WriteLine($"{tabla[0]} {tabla[1],9} {tabla[2],10} {tabla[3],15} {tabla[4],15} {tabla[5],15} {tabla[6],15}");
-                           
-                 
+                            string[] tabla = { "Nombre", "Apellidos", "Horas Trabajadas", "Salario/Hora", "Salario Bruto", "Rebajos", "Salario Neto" };
+                            Console.WriteLine($"{tabla[0]} {tabla[1],2} {tabla[2],2} {tabla[3],2} {tabla[4],2} {tabla[5],2} {tabla[6],2}");
+
+                            foreach (var Lista in datosMixtos)
+                            {
+                                Console.WriteLine(Lista);
+                            }
+                               Console.WriteLine("¿Desea Imprimir Reporte?\n Presione (S) Si o (N) No");
+                               char desicion = Convert.ToChar(Console.ReadLine());
+                                if (desicion == 'S' || desicion == 's')
+                                {
+                                lectura.CrearArchivo(pathTodos,datosMixtos);
+                                }
+                                 else { }
+                            
                             break;
                             
 
