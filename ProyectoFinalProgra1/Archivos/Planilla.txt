@@ -5,4 +5,9 @@ ID Puesto Puesto Salario/Hora Horas/Trab Rebajos
 304220213 Bodeguero 2732 42 8%
 504740325 Supervisor 3276 48 12%
 206170777 Conductor 2673 42 10%
+<<<<<<< HEAD
 
+=======
+208200338 Arquitecto 8974 45 10
+207750506 Enfermera 5798 120 12
+>>>>>>> ramaFabian

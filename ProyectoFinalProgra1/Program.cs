@@ -23,7 +23,7 @@ namespace ProyectoFinalProgra1
             
 
             LeerDatos lectura = new LeerDatos(pathEmp,pathPlan); //Instancia de la Clase leer Datos para llamar sus metodos.
-            EscribirDatos escritura = new EscribirDatos();
+            EscribirDatos escritura = new EscribirDatos(pathEmp, pathPlan);
 
             datosEmp = lectura.LeerArchivo(pathEmp); //Almacenar en las listas los datos leidos por metodo LeerArchivo segun path enviado
             datosPlan = lectura.LeerArchivo(pathPlan);
@@ -92,19 +92,94 @@ namespace ProyectoFinalProgra1
 
                     break;
 
-                case (2):
-                    Console.WriteLine("Ingrese el nombre del empleado");
-                    string nombre = Console.ReadLine();
-                    Console.WriteLine("Ingrese el salario del empleado");
-                    double salario = Convert.ToDouble(Console.ReadLine());
-                    escritura.AgregarEmpleado( nombre, salario);
-                    Console.WriteLine("Empleado agregado y datos guardados. ");
+                case (2):                                 
+                                                    
+                     Console.WriteLine("Ingrese la cédula del empleado");
+                     string cedula = Console.ReadLine();
+                     while (!Validaciones.ValidarCedula(cedula))
+                     {
+                        Console.WriteLine("Formato Invalido, ingrese un formato valido");
+                        cedula = Console.ReadLine();
+                     }
+
+                     Console.WriteLine("Ingrese el nombre y apellidos del empleado");
+                     string nombre = Console.ReadLine();
+                     while (!Validaciones.CamposVacios(nombre))
+                     {
+                        Console.WriteLine("Este campo no puede estar vacio");
+                        nombre = Console.ReadLine();
+                     }
+
+                     Console.WriteLine("Ingrese el email del empleado");
+                     string email = Console.ReadLine();
+                     while (!Validaciones.ValidarCorreo(email))
+                     {
+                        Console.WriteLine("Formato Invalido, ingrese un formato valido");
+                        email = Console.ReadLine();
+                     }
+
+                    string id = ""; 
+                    do
+                    {
+                        Console.WriteLine("Ingrese el ID del empleado en planilla");
+                         id = Console.ReadLine();
+                        while (!Validaciones.CamposVacios(id))
+                        {
+                            Console.WriteLine("Formato Invalido, ingrese un formato valido");
+                            id = Console.ReadLine();
+                        }
+
+                        if (!Validaciones.CedulaIdIguales(cedula, id))
+                        {
+                            Console.WriteLine("La cedula y el ID no coinciden");
+
+                        }
+                    } while (!Validaciones.CedulaIdIguales(cedula, id));   
+
+
+                        Console.WriteLine("Ingrese la profesión del empleado");
+                     string profesion = Console.ReadLine();
+                     while (!Validaciones.CamposVacios(profesion))
+                     {
+                        Console.WriteLine("Este campo no puede estar vacio");
+                        profesion = Console.ReadLine();
+                     }
+
+                     Console.WriteLine("Ingrese el salario por hora del empleado");
+                    double salarioHora;
+                     while (!double.TryParse(Console.ReadLine(), out salarioHora) || salarioHora <=0)
+                     {
+                        Console.WriteLine("Dato invalido, por favor ingrese un valor numerico");                       
+                     }
+
+                     Console.WriteLine("Ingrese las horas trabajadas del empleado");
+                     double horasTrabajadas;
+                     while (!double.TryParse(Console.ReadLine(), out horasTrabajadas) || horasTrabajadas <= 0)
+                     {
+                        Console.WriteLine("Dato invalido, por favor ingrese un valor numerico");                       
+                     }
+
+                     Console.WriteLine("Ingrese el porcentaje de rebajos del salario (ejemplo 12%)");
+                     string porcentajeRebajos = Console.ReadLine();
+                     double rebajos;
+                     while (!double.TryParse(porcentajeRebajos.TrimEnd('%'), out rebajos) || rebajos <= 0) 
+                     {
+                        Console.WriteLine("Dato invalido, por favor ingrese un valor numerico");
+                        porcentajeRebajos = Console.ReadLine();
+                     }
+                    escritura.AgregarEmpleado(cedula, nombre, email, id, profesion, salarioHora, horasTrabajadas, rebajos);   
+                     Console.WriteLine("Empleado agregado y datos guardados.");                                 
+                    
                     break;
 
                 case (3):
 
                     Environment.Exit(0);
 
+                    break;
+
+                default:
+                    Console.WriteLine("Opcion no valida");
                     break;
             }
 
