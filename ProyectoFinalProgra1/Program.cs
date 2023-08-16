@@ -7,7 +7,7 @@ namespace ProyectoFinalProgra1
     {
         static string pathEmp = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
         static  string pathPlan = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla.txt";
-
+        static string pathTodos = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla_del_mes.txt";
         static void Main(string[] args)
         {
 
@@ -16,7 +16,7 @@ namespace ProyectoFinalProgra1
            
            
            
-            LeerDatos lectura = new LeerDatos(pathEmp,pathPlan); //Instancia de la Clase leer Datos para llamar sus metodos.
+            LeerDatos lectura = new LeerDatos(pathEmp,pathPlan,pathTodos); //Instancia de la Clase leer Datos para llamar sus metodos.
             EscribirDatos escritura = new EscribirDatos();
 
             datosEmp = lectura.LeerArchivo(pathEmp); //Almacenar en las listas los datos leidos por metodo LeerArchivo segun path enviado
@@ -84,7 +84,7 @@ namespace ProyectoFinalProgra1
                                char desicion = Convert.ToChar(Console.ReadLine());
                                 if (desicion == 'S' || desicion == 's')
                                 {
-                                lectura.CrearArchivo(pathEmp,datosMixtos);
+                                lectura.CrearArchivo(pathTodos,datosMixtos);
                                 }
                                  else { }
                             
