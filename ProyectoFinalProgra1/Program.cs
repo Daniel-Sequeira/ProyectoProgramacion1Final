@@ -13,21 +13,42 @@ namespace ProyectoFinalProgra1
 
             List<string> datosEmp = new List<string>(); //Instancias de Listas 
             List<string> datosPlan = new List<string>();
-            List<string> subEmp = new List<string>();
-            List<string> subPlan = new List<string>();
+            List<string> datosMixtos = new List<string>();
+
+            string empleados;
+            string planilla;
+            int valorHora;
+            int horasTrab;
+            int salarioBruto;
+            
 
             LeerDatos lectura = new LeerDatos(pathEmp,pathPlan); //Instancia de la Clase leer Datos para llamar sus metodos.
             EscribirDatos escritura = new EscribirDatos(pathEmp, pathPlan);
 
-            datosEmp = lectura.LeerArchivo(pathEmp); //Almaacenar en las listas los datos leidos por metodo LeerArchivo segun path enviado
+            datosEmp = lectura.LeerArchivo(pathEmp); //Almacenar en las listas los datos leidos por metodo LeerArchivo segun path enviado
             datosPlan = lectura.LeerArchivo(pathPlan);
-            subEmp = datosEmp.GetRange(1,3);
-            subPlan = datosPlan.GetRange(2,3);
+
+            
+                empleados = datosEmp.Find(n => n.Contains(" "));
+                planilla = datosPlan.Find(n => n.Contains(" "));
+                string[] arregloEmp = empleados.Split(" ");
+                string[] arregloPlan = planilla.Split(" ");
+                valorHora = int.Parse(arregloPlan[2]);
+                horasTrab = int.Parse(arregloPlan[3]);
+                salarioBruto = valorHora * horasTrab;
+
+
+
+                datosMixtos.Add
+                (arregloEmp[1] + " " + arregloEmp[2] + " " + arregloEmp[3] + " " + arregloPlan[3] + " " + arregloPlan[2]);
+
+            
+
 
 
 
             int opcion;
-            Console.WriteLine("_______________DISTRIBUIDORA DEL NORTE_______________");
+             Console.WriteLine("_______________DISTRIBUIDORA DEL NORTE_______________");
             Console.WriteLine(" ");
             Console.WriteLine("          ~~~~~ MENU PRINCIPAL ~~~~~\n                 ");
             Console.WriteLine(" 1----- VER SALARIOS\n  ");
@@ -53,19 +74,13 @@ namespace ProyectoFinalProgra1
                             Console.WriteLine("________________Todos los Salarios______________");
                             string[] tabla = { "Cedula","Nombre", "Apellidos", "Horas Trabajadas", "Salario/Hora", "Salario Bruto", "Deducciones","Salario Neto" };
                             Console.WriteLine($"{tabla[0]} {tabla[1],9} {tabla[2],10} {tabla[3],15} {tabla[4],15} {tabla[5],15} {tabla[6],15}");
-                            foreach (var item in subEmp)
-                            {
-                                Console.WriteLine(item);
-                            }
-
-                            
-                         
-
+                           
+                 
                             break;
                             
 
                         case (2):
-                            lectura.BuscarSalarioID();
+                            
 
                             break;
 
@@ -132,5 +147,6 @@ namespace ProyectoFinalProgra1
           
 
         }
+       
     }
 }

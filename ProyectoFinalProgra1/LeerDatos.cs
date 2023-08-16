@@ -8,7 +8,9 @@ namespace ProyectoFinalProgra1
     
     public class LeerDatos
     {
+       
         private string path; //Campo de la clase.
+       
         private List<string> datos; //Declaración Lista datos
 
         /// <summary>
@@ -50,6 +52,8 @@ namespace ProyectoFinalProgra1
 
         }
 
+
+
         /// <summary>
         /// Metodo para generar un archivo segun path enviado por parámetro
         /// </summary>
@@ -58,26 +62,16 @@ namespace ProyectoFinalProgra1
             {
                using (StreamWriter swf = File.CreateText(path))
                {
-                foreach (var dato in datosP)
-                { 
+                 foreach (var dato in datosP)
+                 { 
                     swf.WriteLine(dato);
 
                      swf.Close();
 
-                }
-                   
+                 }
+          
                }
             }
-
-
-        public void BuscarSalarioID()
-        {
-            Console.WriteLine("Ingrese el número de cédula ");
-          
-
-
-            
-        }
 
 
 

@@ -5,6 +5,7 @@ using System.Text;
 
 namespace ProyectoFinalProgra1
 {
+    
     public class EscribirDatos
     {
         private string pathEmp;
