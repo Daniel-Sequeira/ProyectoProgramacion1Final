@@ -7,18 +7,27 @@ namespace ProyectoFinalProgra1
 {
     public class EscribirDatos
     {
-       
-        public void AgregarEmpleado(string nombre, double salario)
+        private string pathEmp;
+        private string pathPlan;
+        public EscribirDatos(string pathEmp, string pathPlan)
         {
-            using (StreamWriter sw = new StreamWriter(nombre))
+            this.pathEmp = pathEmp;
+            this.pathPlan = pathPlan;
+        }
+       
+        public void AgregarEmpleado(string cedula, string nombre, string email, string id, string profesion, double salarioHora, double horasTrabajadas, double rebajos)
+        {
+            string empleadoInfo = $"{cedula} || {nombre} || {email}";
+            string planillaInfo = $"{id} || {profesion} || {salarioHora} || {horasTrabajadas} || {rebajos}";
+            using (StreamWriter swEmp = new StreamWriter(pathEmp, true))
             {
-                sw.WriteLine("Nombre: +" + nombre + " - Salario: " + salario);
-                sw.Close();
+                swEmp.WriteLine(empleadoInfo);
+            }
+            using (StreamWriter swPlan = new StreamWriter(pathPlan, true))
+            {
+                swPlan.WriteLine(planillaInfo);
             }
 
         }
-
-
-
     }
 }
