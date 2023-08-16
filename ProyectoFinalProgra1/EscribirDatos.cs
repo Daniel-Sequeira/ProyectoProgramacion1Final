@@ -18,8 +18,8 @@ namespace ProyectoFinalProgra1
        
         public void AgregarEmpleado(string cedula, string nombre, string email, string id, string profesion, double salarioHora, double horasTrabajadas, double rebajos)
         {
-            string empleadoInfo = $"{cedula} || {nombre} || {email}";
-            string planillaInfo = $"{id} || {profesion} || {salarioHora} || {horasTrabajadas} || {rebajos}";
+            string empleadoInfo = $"{cedula} {nombre} {email}";
+            string planillaInfo = $"{id} {profesion} {salarioHora} {horasTrabajadas} {rebajos}";
             using (StreamWriter swEmp = new StreamWriter(pathEmp, true))
             {
                 swEmp.WriteLine(empleadoInfo);

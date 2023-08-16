@@ -92,44 +92,49 @@ namespace ProyectoFinalProgra1
 
                     break;
 
-                case (2):
-                   
-                    Console.WriteLine("Desea guardar los datos? (S/N)");
-                    string respuesta = Console.ReadLine();
-                    
-                    if (respuesta.ToUpper() == "S")
-                    {
-                        Console.WriteLine("Ingrese la cédula del empleado");
-                        string cedula = Console.ReadLine();
+                case (2):                                 
+                                                    
+                     Console.WriteLine("Ingrese la cédula del empleado");
+                     string cedula = Console.ReadLine();
+                     while (!Validaciones.ValidarCedula(cedula))
+                     {
+                        Console.WriteLine("Formato Invalido, ingrese un formato valido");
+                        cedula = Console.ReadLine();
+                     }
 
-                        Console.WriteLine("Ingrese el nombre del empleado");
-                        string nombre = Console.ReadLine();
+                     Console.WriteLine("Ingrese el nombre del empleado");
+                     string nombre = Console.ReadLine();
 
-                        Console.WriteLine("Ingrese el email del empleado");
-                        string email = Console.ReadLine();
+                     Console.WriteLine("Ingrese el email del empleado");
+                     string email = Console.ReadLine();
+                     while (!Validaciones.ValidarCorreo(email))
+                     {
+                        Console.WriteLine("Formato Invalido, ingrese un formato valido");
+                        email = Console.ReadLine();
+                     }
 
-                        Console.WriteLine("Ingrese el ID del empleado en planilla");
-                        string id = Console.ReadLine();
+                     Console.WriteLine("Ingrese el ID del empleado en planilla");
+                     string id = Console.ReadLine();
+                     while (!Validaciones.ValidarCedula(cedula))
+                     {
+                        Console.WriteLine("Formato Invalido, ingrese un formato valido");
+                        cedula = Console.ReadLine();
+                     }
 
-                        Console.WriteLine("Ingrese la profesión del empleado");
-                        string profesion = Console.ReadLine();
+                    Console.WriteLine("Ingrese la profesión del empleado");
+                     string profesion = Console.ReadLine();
 
-                        Console.WriteLine("Ingrese el salario por hora del empleado");
-                        double salarioHora = Convert.ToDouble(Console.ReadLine());
+                     Console.WriteLine("Ingrese el salario por hora del empleado");
+                     double salarioHora = Convert.ToDouble(Console.ReadLine());
 
-                        Console.WriteLine("Ingrese las horas trabajadas del empleado");
-                        double horasTrabajadas = Convert.ToDouble(Console.ReadLine());
+                     Console.WriteLine("Ingrese las horas trabajadas del empleado");
+                     double horasTrabajadas = Convert.ToDouble(Console.ReadLine());
 
-                        Console.WriteLine("Ingrese los rebajos del empleado");
-                        double rebajos = Convert.ToDouble(Console.ReadLine());
-                        escritura.AgregarEmpleado(cedula, nombre, email, id, profesion, salarioHora, horasTrabajadas, rebajos);   
-                        Console.WriteLine("Empleado agregado y datos guardados.");
+                     Console.WriteLine("Ingrese los rebajos del empleado");
+                     double rebajos = Convert.ToDouble(Console.ReadLine());
 
-                    }
-                    else
-                    {
-                        Console.WriteLine("Empleado no guardado");
-                    }
+                     escritura.AgregarEmpleado(cedula, nombre, email, id, profesion, salarioHora, horasTrabajadas, rebajos);   
+                     Console.WriteLine("Empleado agregado y datos guardados.");                                 
                     
                     break;
 
