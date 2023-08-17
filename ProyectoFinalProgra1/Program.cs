@@ -8,13 +8,13 @@ namespace ProyectoFinalProgra1
         static string pathEmp = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
         static  string pathPlan = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla.txt";
         static string pathTodos = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla_del_mes.txt";
-        static string pathfun = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\arregtxt";
+        
         static void Main(string[] args)
         {
 
             List<string> datosEmp = new List<string>(); //Instancias de Listas 
             List<string> datosPlan = new List<string>();
-            List<string> datosfun = new List<string>();
+            List<string> datosFun = new List<string>();
 
 
 
@@ -98,7 +98,6 @@ namespace ProyectoFinalProgra1
 
                         case (2):
                             Console.Clear();
-
                             string ced;
                             Console.WriteLine("Ingrese el numero de cedula");
                             ced = Console.ReadLine();
@@ -109,32 +108,49 @@ namespace ProyectoFinalProgra1
                             }
                             else
                             {
-                                for (int i = 0; i < datosEmp.Count; i++)
+                                foreach (var v in datosEmp)
                                 {
                                     string funcionario = datosEmp.Find(x => x.Contains(ced));
-                                    string información = datosPlan.Find(x => x.Contains(ced));
+                                    string informacion = datosPlan.Find(x => x.Contains(ced));
                                     string[] arregloFun = funcionario.Split(" ");
-                                    string[] arregloInf = funcionario.Split(" ");
-                                    datosfun.Add
+                                    string[] arregloInf = informacion.Split(" ");
+                                    int salB = Convert.ToInt32(arregloInf[2]) * Convert.ToInt32(arregloInf[3]);
+                                    string vRebajo = arregloInf[4].Replace("%", " ");
+                                    double deduccion = (double.Parse(vRebajo) / 100) * salB;
+                                    double sNeto = salB - deduccion;
+                                    datosFun.Add
                                         (
                                         arregloFun[1] + " " +
-                                        arregloFun[2]
+                                        arregloFun[2] + " " +
+                                        arregloFun[3] + " " +
+                                        arregloInf[3] + " " +
+                                        arregloInf[2] + " " +
+                                        salB.ToString() + " " +
+                                        deduccion.ToString() + " " +
+                                        sNeto.ToString()
+
                                         );
+                                  
+
                                     break;
                                 }
                                      
                             }
+                             
 
-                            foreach (var list in datosfun)
+                            foreach (var list in datosFun)
                             {
                                 Console.WriteLine(list);
                             }
-                            Console.WriteLine("Desea Generar Reporte");
-                            Char elegir = Convert.ToChar(Console.ReadLine());
+                            Console.WriteLine("Desea Generar Reporte\n Presione (S) Si o (N) No");
+                            char elegir = Convert.ToChar(Console.ReadLine());
+
                             if (elegir == 'S' || elegir == 's')
                             {
-                                /*lectura.CrearArchivo(pathTodos, datosfun);*/
+                                string pathFun = $@"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\{ced}.txt";
+                                lectura.CrearArchivo(pathFun, datosFun);
                             }
+                            else { }
 
                             break;
 

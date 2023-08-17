@@ -23,6 +23,7 @@ namespace ProyectoFinalProgra1
             path = pathEmp;
             path = pathPlan;
             path = pathTodos;
+            
         }
 
         /// <summary>
