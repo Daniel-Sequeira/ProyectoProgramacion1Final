@@ -8,14 +8,16 @@ namespace ProyectoFinalProgra1
         static string pathEmp = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
         static  string pathPlan = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla.txt";
         static string pathTodos = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla_del_mes.txt";
+        static string pathfun = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\arregtxt";
         static void Main(string[] args)
         {
 
             List<string> datosEmp = new List<string>(); //Instancias de Listas 
             List<string> datosPlan = new List<string>();
-           
-           
-           
+            List<string> datosfun = new List<string>();
+
+
+
             LeerDatos lectura = new LeerDatos(pathEmp,pathPlan,pathTodos); //Instancia de la Clase leer Datos para llamar sus metodos.
             EscribirDatos escritura = new EscribirDatos();
 
@@ -45,8 +47,11 @@ namespace ProyectoFinalProgra1
 
                  ) ;
             }
+           
 
-         
+
+
+
 
             int opcion;
              Console.WriteLine("_______________DISTRIBUIDORA DEL NORTE_______________");
@@ -92,7 +97,44 @@ namespace ProyectoFinalProgra1
                             
 
                         case (2):
-                            
+                            Console.Clear();
+
+                            string ced;
+                            Console.WriteLine("Ingrese el numero de cedula");
+                            ced = Console.ReadLine();
+                            datosEmp.Find(x => x.Contains(ced));
+                            if (ced == null)
+                            {
+                                Console.WriteLine("Cédula no encontrada");
+                            }
+                            else
+                            {
+                                for (int i = 0; i < datosEmp.Count; i++)
+                                {
+                                    string funcionario = datosEmp.Find(x => x.Contains(ced));
+                                    string información = datosPlan.Find(x => x.Contains(ced));
+                                    string[] arregloFun = funcionario.Split(" ");
+                                    string[] arregloInf = funcionario.Split(" ");
+                                    datosfun.Add
+                                        (
+                                        arregloFun[1] + " " +
+                                        arregloFun[2]
+                                        );
+                                    break;
+                                }
+                                     
+                            }
+
+                            foreach (var list in datosfun)
+                            {
+                                Console.WriteLine(list);
+                            }
+                            Console.WriteLine("Desea Generar Reporte");
+                            Char elegir = Convert.ToChar(Console.ReadLine());
+                            if (elegir == 'S' || elegir == 's')
+                            {
+                                /*lectura.CrearArchivo(pathTodos, datosfun);*/
+                            }
 
                             break;
 

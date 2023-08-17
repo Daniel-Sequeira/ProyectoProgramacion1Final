@@ -8,7 +8,7 @@ namespace ProyectoFinalProgra1
     
     public class EscribirDatos
     {
-       
+    
         public void AgregarEmpleado(string nombre, double salario)
         {
             using (StreamWriter sw = new StreamWriter(nombre ))
@@ -18,10 +18,7 @@ namespace ProyectoFinalProgra1
             } 
 
         }
-
-   
-
-
+        
 
     }
 }

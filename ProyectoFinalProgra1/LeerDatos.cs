@@ -67,10 +67,8 @@ namespace ProyectoFinalProgra1
                     swf.WriteLine(dato);
                  }
                     swf.Close();
-            }
+               }
             }
 
-        
-        
     }
 }
