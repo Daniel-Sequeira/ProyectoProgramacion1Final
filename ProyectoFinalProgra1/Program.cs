@@ -14,20 +14,11 @@ namespace ProyectoFinalProgra1
 
             List<string> datosEmp = new List<string>(); //Instancias de Listas 
             List<string> datosPlan = new List<string>();
-<<<<<<< HEAD
            
            
            
             LeerDatos lectura = new LeerDatos(pathEmp,pathPlan,pathTodos); //Instancia de la Clase leer Datos para llamar sus metodos.
             EscribirDatos escritura = new EscribirDatos(pathEmp,pathPlan);
-=======
-            List<string> datosFun = new List<string>();
-
-
-
-            LeerDatos lectura = new LeerDatos(pathEmp, pathPlan, pathTodos); //Instancia de la Clase leer Datos para llamar sus metodos.
-            EscribirDatos escritura = new EscribirDatos();
->>>>>>> rDaniel3
 
             datosEmp = lectura.LeerArchivo(pathEmp); //Almacenar en las listas los datos leidos por metodo LeerArchivo segun path enviado
             datosPlan = lectura.LeerArchivo(pathPlan);
