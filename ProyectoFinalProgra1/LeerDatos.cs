@@ -23,6 +23,7 @@ namespace ProyectoFinalProgra1
             path = pathEmp;
             path = pathPlan;
             path = pathTodos;
+            
         }
 
         /// <summary>
@@ -67,10 +68,8 @@ namespace ProyectoFinalProgra1
                     swf.WriteLine(dato);
                  }
                     swf.Close();
-            }
+               }
             }
 
-        
-        
     }
 }
