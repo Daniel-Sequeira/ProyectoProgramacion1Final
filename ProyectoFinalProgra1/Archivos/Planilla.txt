@@ -8,4 +8,4 @@ ID Puesto Puesto Salario/Hora Horas/Trab Rebajos
 208200338 Arquitecto 8974 45 10
 207750506 Enfermera 5798 120 12
 208200335 Comerciante 7845 40 15%
-208200335 78 7894 45 15%
+
