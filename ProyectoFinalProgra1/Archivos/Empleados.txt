@@ -4,4 +4,12 @@
 306110452 Fernanda Picado Mora fpicado16@outlook.com
 304220213 Marco Sibaja Arce msibaja76@yahoo.es
 504740325 Roberto Fernandez Villalobos rfernandez23@yahoo.com
+<<<<<<< HEAD
 206170777 Leticia Acuña Mejias lety24@gmail.com
+=======
+206170777 Leticia Acuña Mejias lety24@gmail.com
+208200338 Fabian Arredondo Arce fabianarredondo356@gmail.com
+207750506 Yesmy Vega Cespedes yesmy112@gmail.com
+208200335 Jean Carlo Barquero Castro jocarloc112@gmail.com
+
+>>>>>>> 7e05bcd227c23c9efdff06012415063458fad551

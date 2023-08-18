@@ -5,11 +5,17 @@ namespace ProyectoFinalProgra1
 {
     class Program
     {
+<<<<<<< HEAD
         //declaracion de campos que contienen string path para enviar por parámetro
         static string pathEmp = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
         static string pathPlan = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla.txt";
         static string pathTodos = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla_del_mes.txt";
 
+=======
+        static string pathEmp = @"C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\Archivos\Empleados.txt";
+        static  string pathPlan = @"C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\Archivos\Planilla.txt";
+        static string pathTodos = @"C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\Archivos\Planilla_del_mes.txt";
+>>>>>>> 7e05bcd227c23c9efdff06012415063458fad551
         static void Main(string[] args)
         {
             //Instancias de Listas para almecenar datos de los txt leidos y nuevos datos mixtos
@@ -68,10 +74,19 @@ namespace ProyectoFinalProgra1
                 Console.WriteLine("Digite una opcion mediante los numeros 1, 2 o 3 ");
                 opcion = Convert.ToInt32(Console.ReadLine());
 
+<<<<<<< HEAD
                 //Estructura Switch para manejo de opciones de menu y sub menu anidado
                 switch (opcion)
                 {
                     case (1):
+=======
+
+                switch (opcion)
+                {
+
+                    case (1):
+
+>>>>>>> 7e05bcd227c23c9efdff06012415063458fad551
                         Console.Clear();
                         int submenu;
                         Console.WriteLine("1---Todos los Salarios\n");
@@ -83,6 +98,7 @@ namespace ProyectoFinalProgra1
                         switch (submenu)
                         {
 
+<<<<<<< HEAD
                             case (1): //Muestra todos los salario
 
                                 Console.Clear();
@@ -90,11 +106,21 @@ namespace ProyectoFinalProgra1
                                 string[] tabla = { "Nombre", "Apellidos", "Horas Trabajadas", "Salario/Hora", "Salario Bruto", "Rebajos", "Salario Neto" };
                                 Console.WriteLine($"{tabla[0]} {tabla[1],2} {tabla[2],2} {tabla[3],2} {tabla[4],2} {tabla[5],2} {tabla[6],2}");
                                 foreach (var Lista in datosMixtos) //Impresion detos de lista
+=======
+                            case (1):
+                                Console.Clear();
+                                Console.WriteLine("________________Todos los Salarios______________");
+                                string[] tabla = { "Nombre", "Apellidos", "Horas Trabajadas", "Salario/Hora", "Salario Bruto", "Rebajos", "Salario Neto" };
+                                Console.WriteLine($"{tabla[0]} {tabla[1],2} {tabla[2],2} {tabla[3],2} {tabla[4],2} {tabla[5],2} {tabla[6],2}");
+
+                                foreach (var Lista in datosMixtos)
+>>>>>>> 7e05bcd227c23c9efdff06012415063458fad551
                                 {
                                     Console.WriteLine(Lista);
                                 }
                                 Console.WriteLine("¿Desea Imprimir Reporte?\n Presione (S) Generar reporte o (N) Retorno a menu principal");
                                 char desicion = Convert.ToChar(Console.ReadLine());
+<<<<<<< HEAD
 
                                 if (desicion == 'S' || desicion == 's')//Segun desicion en pantalla se llama al metodo que genera reporte
                                 {
@@ -175,6 +201,97 @@ namespace ProyectoFinalProgra1
 
                     case (2): //Switch principal Agregar empleado                                
 
+=======
+                                if (desicion == 'S' || desicion == 's')
+                                {
+                                    lectura.CrearArchivo(pathTodos, datosMixtos);
+                                }
+                                else if (desicion == 'N' || desicion == 'n')
+                                {
+                                    goto MainMenu;
+
+                                }
+                                break;
+
+                            case (2):
+                                Console.Clear();
+                                string ced;
+                                Console.WriteLine("Ingrese el numero de cedula");
+                                ced = Console.ReadLine();
+                                datosEmp.Find(x => x.Contains(ced));
+                                if (ced == null)
+                                {
+                                    Console.WriteLine("Cédula no encontrada");
+                                }
+                                else
+                                {
+                                    foreach (var v in datosEmp)
+                                    {
+                                        string funcionario = datosEmp.Find(x => x.Contains(ced));
+                                        string informacion = datosPlan.Find(x => x.Contains(ced));
+                                        string[] arregloFun = funcionario.Split(" ");
+                                        string[] arregloInf = informacion.Split(" ");
+                                        int salB = Convert.ToInt32(arregloInf[2]) * Convert.ToInt32(arregloInf[3]);
+                                        string vRebajo = arregloInf[4].Replace("%", " ");
+                                        double deduccion = (double.Parse(vRebajo) / 100) * salB;
+                                        double sNeto = salB - deduccion;
+                                        datosFun.Add
+                                            (
+                                            arregloFun[1] + " " +
+                                            arregloFun[2] + " " +
+                                            arregloFun[3] + " " +
+                                            arregloInf[3] + " " +
+                                            arregloInf[2] + " " +
+                                            salB.ToString() + " " +
+                                            deduccion.ToString() + " " +
+                                            sNeto.ToString()
+
+                                            );
+
+
+                                        break;
+                                    }
+
+                                }
+
+                                foreach (var list in datosFun)
+                                {
+                                    Console.WriteLine(list);
+                                }
+                                Console.WriteLine("Desea Generar Reporte\n Presione (S) Si o (N) No");
+                                char elegir = Convert.ToChar(Console.ReadLine());
+
+                                if (elegir == 'S' || elegir == 's')
+                                {
+                                    string pathFun = $@"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\{ced}.txt";
+                                    lectura.CrearArchivo(pathFun, datosFun);
+                                }
+                                else if (elegir == 'N' || elegir == 'n')
+                                {
+                                    goto MainMenu;
+                                }
+
+
+                                break;
+
+                            case (3):
+                                Environment.Exit(0);
+                                break;
+
+                            default:
+                                Console.WriteLine("Opcion novalida");
+                                break;
+
+                        }
+
+                        break;
+
+
+
+
+                    case (2):
+
+>>>>>>> 7e05bcd227c23c9efdff06012415063458fad551
                         Console.WriteLine("Ingrese la cédula del empleado");
                         string cedula = Console.ReadLine();
                         while (!Validaciones.ValidarCedula(cedula))
@@ -254,6 +371,7 @@ namespace ProyectoFinalProgra1
                         break;
 
                     case (3):
+<<<<<<< HEAD
                         continua = false;
                         Environment.Exit(0);
 
@@ -265,6 +383,19 @@ namespace ProyectoFinalProgra1
             } while (continua);
 
         }
+=======
+
+                        Environment.Exit(0);
+
+                        break;
+
+                    default:
+                        Console.WriteLine("Opcion no valida");
+                        break;
+                }
+            } while (continua);
+        }       
+>>>>>>> 7e05bcd227c23c9efdff06012415063458fad551
     }
 }
        
