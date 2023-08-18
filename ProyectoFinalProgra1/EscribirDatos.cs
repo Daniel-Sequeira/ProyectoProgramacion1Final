@@ -8,14 +8,9 @@ namespace ProyectoFinalProgra1
     
     public class EscribirDatos
     {
-<<<<<<< HEAD
         private string pathEmp;
         private string pathPlan;
         public EscribirDatos(string pathEmp, string pathPlan)
-=======
-    
-        public void AgregarEmpleado(string nombre, double salario)
->>>>>>> rDaniel3
         {
             this.pathEmp = pathEmp;
             this.pathPlan = pathPlan;
@@ -35,10 +30,5 @@ namespace ProyectoFinalProgra1
             }
 
         }
-<<<<<<< HEAD
-=======
-        
-
->>>>>>> rDaniel3
     }
 }
