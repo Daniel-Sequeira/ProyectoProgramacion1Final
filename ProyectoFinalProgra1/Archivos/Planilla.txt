@@ -3,3 +3,5 @@ ID Puesto Puesto Salario/Hora Horas/Trab Rebajos
 103230464 Administrador 4276 44 14%
 306110452 Secretaria 2560 44 10%
 304220213 Bodeguero 2732 42 8%
+208200338 Programador 7894 45 25%
+207750506 Enfermera 5410 78 15%
