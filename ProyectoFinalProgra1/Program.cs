@@ -44,7 +44,6 @@ namespace ProyectoFinalProgra1
                   rebajo.ToString() + " " +
                   salNet.ToString()
 
-
                  );
             }
 
@@ -114,9 +113,11 @@ namespace ProyectoFinalProgra1
                                     Console.WriteLine("Ingrese el numero de cedula");
                                     ced = Console.ReadLine();
                                     datosEmp.Find(x => x.Contains(ced));
+
                                     if (ced == null)
                                     {
                                         Console.WriteLine("Cédula no encontrada");
+                                      
                                     }
                                     else
                                     {
