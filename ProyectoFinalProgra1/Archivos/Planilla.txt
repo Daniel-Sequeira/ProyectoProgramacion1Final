@@ -3,13 +3,3 @@ ID Puesto Puesto Salario/Hora Horas/Trab Rebajos
 103230464 Administrador 4276 44 14%
 306110452 Secretaria 2560 44 10%
 304220213 Bodeguero 2732 42 8%
-504740325 Supervisor 3276 48 12%
-<<<<<<< HEAD
-206170777 Conductor 2673 42 10%
-=======
-206170777 Conductor 2673 42 10%
-208200338 Arquitecto 8974 45 10
-207750506 Enfermera 5798 120 12
-208200335 Comerciante 7845 40 15%
-
->>>>>>> 7e05bcd227c23c9efdff06012415063458fad551
