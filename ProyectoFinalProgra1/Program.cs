@@ -5,14 +5,15 @@ namespace ProyectoFinalProgra1
 {
     class Program
     {
+        //declaracion de campos que contienen string path para enviar por parámetro
         static string pathEmp = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
         static string pathPlan = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla.txt";
         static string pathTodos = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla_del_mes.txt";
 
         static void Main(string[] args)
         {
-
-            List<string> datosEmp = new List<string>(); //Instancias de Listas 
+            //Instancias de Listas para almecenar datos de los txt leidos y nuevos datos mixtos
+            List<string> datosEmp = new List<string>(); 
             List<string> datosPlan = new List<string>();
             List<string> datosFun = new List<string>();
 
@@ -25,7 +26,7 @@ namespace ProyectoFinalProgra1
             datosPlan = lectura.LeerArchivo(pathPlan);
 
             List<string> datosMixtos = new List<string>();
-
+            //Cilco for recorre lista, se almacena en arreglos separado por espacios y rellena nueva lista datos mixtos.
             for (int i = 0; i < datosEmp.Count; i++)
             {
                 string[] arregloEmp = datosEmp[i].Split(" ");
@@ -51,7 +52,7 @@ namespace ProyectoFinalProgra1
 
 
 
-
+         //Etiqueta para retorno a menu principal
         MainMenu:
             bool continua = true;
             do
@@ -67,7 +68,7 @@ namespace ProyectoFinalProgra1
                 Console.WriteLine("Digite una opcion mediante los numeros 1, 2 o 3 ");
                 opcion = Convert.ToInt32(Console.ReadLine());
 
-
+                //Estructura Switch para manejo de opciones de menu y sub menu anidado
                 switch (opcion)
                 {
                     case (1):
@@ -88,14 +89,14 @@ namespace ProyectoFinalProgra1
                                 Console.WriteLine("________________Todos los Salarios______________");
                                 string[] tabla = { "Nombre", "Apellidos", "Horas Trabajadas", "Salario/Hora", "Salario Bruto", "Rebajos", "Salario Neto" };
                                 Console.WriteLine($"{tabla[0]} {tabla[1],2} {tabla[2],2} {tabla[3],2} {tabla[4],2} {tabla[5],2} {tabla[6],2}");
-                                foreach (var Lista in datosMixtos)
+                                foreach (var Lista in datosMixtos) //Impresion detos de lista
                                 {
                                     Console.WriteLine(Lista);
                                 }
                                 Console.WriteLine("¿Desea Imprimir Reporte?\n Presione (S) Generar reporte o (N) Retorno a menu principal");
                                 char desicion = Convert.ToChar(Console.ReadLine());
 
-                                if (desicion == 'S' || desicion == 's')
+                                if (desicion == 'S' || desicion == 's')//Segun desicion en pantalla se llama al metodo que genera reporte
                                 {
                                     lectura.CrearArchivo(pathTodos, datosMixtos);
                                 }
@@ -118,7 +119,7 @@ namespace ProyectoFinalProgra1
                                 }
                                 else
                                 {
-                                    foreach (var v in datosEmp)
+                                    foreach (var v in datosEmp) //recorre la lista ya creada, subdivide y almacena en arreglos
                                     {
                                         string funcionario = datosEmp.Find(x => x.Contains(ced));
                                         string informacion = datosPlan.Find(x => x.Contains(ced));
