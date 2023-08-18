@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace ProyectoFinalProgra1
 {
     class Program
-    {
+    {   //Rutas de los archivos generados para enviar por parámetro.
         static string pathEmp = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
         static  string pathPlan = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla.txt";
         static string pathTodos = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla_del_mes.txt";
@@ -24,7 +24,8 @@ namespace ProyectoFinalProgra1
             datosPlan = lectura.LeerArchivo(pathPlan);
 
             List<string> datosMixtos = new List<string>();
-            //Cilco for recorre lista, se almacena en arreglos separado por espacios y rellena nueva lista datos mixtos.
+            //Cilco for recorre lista,almacena en arreglos linea por linea separado por espacios almacenando elementos en cada indice. Luego se seleccionan indices a conveniencia
+            //realiza calculos neccesarios y rellena nueva lista datos mixtos.
             for (int i = 0; i < datosEmp.Count; i++)
             {
                 string[] arregloEmp = datosEmp[i].Split(" ");
@@ -59,7 +60,7 @@ namespace ProyectoFinalProgra1
             { //Try Catch para que el programa no se cierre si se ingresa una opcion tipo string o char
                 Console.Clear();
                 int opcion;
-                Console.WriteLine("_______________DISTRIBUIDORA DEL NORTE_______________");
+                Console.WriteLine("_______________DISTRIBUIDORA DEL NORTE_______________"); //Impresiones del menu principal
                 Console.WriteLine(" ");
                 Console.WriteLine("          ~~~~~ MENU PRINCIPAL ~~~~~\n                 ");
                 Console.WriteLine(" 1----- VER SALARIOS\n  ");
@@ -68,7 +69,7 @@ namespace ProyectoFinalProgra1
                 Console.WriteLine("Digite una opcion mediante los numeros 1, 2 o 3 ");
                 opcion = Convert.ToInt32(Console.ReadLine());
 
-
+                //Switch contiene estructura principal del menu de opciones
                 switch (opcion)
                 {
 
@@ -82,7 +83,7 @@ namespace ProyectoFinalProgra1
                         Console.WriteLine("Selecione 1, 2, o 3");
                         submenu = Convert.ToInt32(Console.ReadLine());
 
-                        switch (submenu)
+                        switch (submenu) //Un submenu anidado en case 1 de switch principal contiene opciones dependientes de la seleccion 1
                         {
 
                             case (1):
@@ -91,7 +92,7 @@ namespace ProyectoFinalProgra1
                                 string[] tabla = { "Nombre", "Apellidos", "Horas Trabajadas", "Salario/Hora", "Salario Bruto", "Rebajos", "Salario Neto" };
                                 Console.WriteLine($"{tabla[0]} {tabla[1],2} {tabla[2],2} {tabla[3],2} {tabla[4],2} {tabla[5],2} {tabla[6],2}");
 
-                                foreach (var Lista in datosMixtos)
+                                foreach (var Lista in datosMixtos)//Impresion nueva lista generada y opcion de generar reporte o retorno a menu principal
                                 {
                                     Console.WriteLine(Lista);
                                 }
@@ -99,7 +100,7 @@ namespace ProyectoFinalProgra1
                                 char desicion = Convert.ToChar(Console.ReadLine());
                                 if (desicion == 'S' || desicion == 's')
                                 {
-                                    lectura.CrearArchivo(pathTodos, datosMixtos);
+                                    lectura.CrearArchivo(pathTodos, datosMixtos);//generar reporte txt mediante llamado del metodo Crear archivo con path y lista por parámetro
                                 }
                                 else if (desicion == 'N' || desicion == 'n')
                                 {
@@ -109,7 +110,7 @@ namespace ProyectoFinalProgra1
                                 break;
 
                             case (2):
-
+                                //Busca salario existente por ID (cedula) de lo contrario retorna a menu
                                 Console.Clear();
                                 string ced;
                                 Console.WriteLine("Ingrese el numero de cedula");
@@ -126,7 +127,7 @@ namespace ProyectoFinalProgra1
                                 }
                                 else
                                 {
-                                    foreach (var v in datosEmp)
+                                    foreach (var v in datosEmp)//Cilco recorre lista previamente creada subdivide, realiza calulos necesarios y almacena datos seleccionados en nueva lista
                                     {
                                         string funcionario = datosEmp.Find(x => x.Contains(ced));
                                         string informacion = datosPlan.Find(x => x.Contains(ced));
@@ -153,7 +154,7 @@ namespace ProyectoFinalProgra1
                                         break;
                                     }
                                 }
-                                foreach (var list in datosFun)
+                                foreach (var list in datosFun) //Recorrido e impresion de lista
                                 {
                                     Console.WriteLine(list);
                                 }
@@ -163,7 +164,7 @@ namespace ProyectoFinalProgra1
                                 if (elegir == 'S' || elegir == 's')
                                 {
                                     string pathFun = $@"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\{ced}.txt";
-                                    lectura.CrearArchivo(pathFun, datosFun);
+                                    lectura.CrearArchivo(pathFun, datosFun); //Reutilizacion del metodo CrearArchivo con nuevos parámetros
                                 }
                                 else if (elegir == 'N' || elegir == 'n')
                                 {
@@ -174,13 +175,16 @@ namespace ProyectoFinalProgra1
 
                                 break;
 
-                            case (3):
+                            case (3)://Sale completamente del programa
                                 Environment.Exit(0);
                                 break;
 
                             default:
-                                Console.WriteLine("Opcion novalida");
-                                break;
+                                Console.Clear();
+                                Console.WriteLine("Por favor ingrese un digito valido \nPresione cualquier tecla para volver a Menu Principal");
+                                Console.ReadKey();
+                                goto MainMenu;
+                                
 
                         }
 
@@ -291,7 +295,7 @@ namespace ProyectoFinalProgra1
                         break;
 
                     default:
-                        Console.Clear();
+                        Console.Clear(); //Retorno a MenuPrincipal al ingresar opcion mas alla de las disponibles en pantalla.
                         Console.WriteLine("Por favor ingrese un digito valido \nPresione cualquier tecla para volver a Menu Principal");
                         Console.ReadKey();
                         goto MainMenu;
@@ -301,7 +305,7 @@ namespace ProyectoFinalProgra1
 
             }
             catch (FormatException)
-            {
+            {//Retorno a MenuPrincipal al ingresar opcion mas alla de las disponibles en pantalla.
                 Console.Clear();
                 Console.WriteLine("Por favor ingrese un digito valido \nPresione cualquier tecla para volver a Menu Principal");
                 Console.ReadKey();
