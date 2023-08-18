@@ -52,9 +52,9 @@ namespace ProyectoFinalProgra1
 
          //Etiqueta para retorno a menu principal
         MainMenu:
-            bool continua = true;
-            do
-            {
+           
+           
+            
              try{ //Try Catch para que el programa no se cierre si se ingresa una opcion tipo string o char
                 Console.Clear();
                 int opcion;
@@ -108,64 +108,65 @@ namespace ProyectoFinalProgra1
                                     break;
 
                                 case (2):
+
                                     Console.Clear();
                                     string ced;
                                     Console.WriteLine("Ingrese el numero de cedula");
                                     ced = Console.ReadLine();
-                                    datosEmp.Find(x => x.Contains(ced));
+                                   string buscador = datosEmp.Find(x => x.Contains(ced));
 
-                                    if (ced == null)
+                                if (buscador == null)
+                                {
+                                    Console.WriteLine("Cédula no encontrada");
+                                    goto MainMenu;
+
+                                }
+                                else
+                                {
+                                    foreach (var v in datosEmp)
                                     {
-                                        Console.WriteLine("Cédula no encontrada");
-                                      
+                                        string funcionario = datosEmp.Find(x => x.Contains(ced));
+                                        string informacion = datosPlan.Find(x => x.Contains(ced));
+                                        string[] arregloFun = funcionario.Split(" ");
+                                        string[] arregloInf = informacion.Split(" ");
+                                        int salB = Convert.ToInt32(arregloInf[2]) * Convert.ToInt32(arregloInf[3]);
+                                        string vRebajo = arregloInf[4].Replace("%", " ");
+                                        double deduccion = (double.Parse(vRebajo) / 100) * salB;
+                                        double sNeto = salB - deduccion;
+                                        datosFun.Add
+                                            (
+                                            arregloFun[1] + " " +
+                                            arregloFun[2] + " " +
+                                            arregloFun[3] + " " +
+                                            arregloInf[3] + " " +
+                                            arregloInf[2] + " " +
+                                            salB.ToString() + " " +
+                                            deduccion.ToString() + " " +
+                                            sNeto.ToString()
+
+                                            );
+
+
+                                        break;
                                     }
-                                    else
-                                    {
-                                        foreach (var v in datosEmp)
+                                }
+                                        foreach (var list in datosFun)
                                         {
-                                            string funcionario = datosEmp.Find(x => x.Contains(ced));
-                                            string informacion = datosPlan.Find(x => x.Contains(ced));
-                                            string[] arregloFun = funcionario.Split(" ");
-                                            string[] arregloInf = informacion.Split(" ");
-                                            int salB = Convert.ToInt32(arregloInf[2]) * Convert.ToInt32(arregloInf[3]);
-                                            string vRebajo = arregloInf[4].Replace("%", " ");
-                                            double deduccion = (double.Parse(vRebajo) / 100) * salB;
-                                            double sNeto = salB - deduccion;
-                                            datosFun.Add
-                                                (
-                                                arregloFun[1] + " " +
-                                                arregloFun[2] + " " +
-                                                arregloFun[3] + " " +
-                                                arregloInf[3] + " " +
-                                                arregloInf[2] + " " +
-                                                salB.ToString() + " " +
-                                                deduccion.ToString() + " " +
-                                                sNeto.ToString()
-
-                                                );
-
-
-                                            break;
+                                            Console.WriteLine(list);
                                         }
+                                        Console.WriteLine("Desea Generar Reporte\n Presione (S) Si o (N) No");
+                                        char elegir = Convert.ToChar(Console.ReadLine());
 
-                                    }
-
-                                    foreach (var list in datosFun)
-                                    {
-                                        Console.WriteLine(list);
-                                    }
-                                    Console.WriteLine("Desea Generar Reporte\n Presione (S) Si o (N) No");
-                                    char elegir = Convert.ToChar(Console.ReadLine());
-
-                                    if (elegir == 'S' || elegir == 's')
-                                    {
-                                        string pathFun = $@"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\{ced}.txt";
-                                        lectura.CrearArchivo(pathFun, datosFun);
-                                    }
-                                    else if (elegir == 'N' || elegir == 'n')
-                                    {
-                                        goto MainMenu;
-                                    }
+                                        if (elegir == 'S' || elegir == 's')
+                                        {
+                                            string pathFun = $@"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\{ced}.txt";
+                                            lectura.CrearArchivo(pathFun, datosFun);
+                                        }
+                                        else if (elegir == 'N' || elegir == 'n')
+                                        {
+                                            goto MainMenu;
+                                        }
+                                    
 
 
                                     break;
@@ -296,7 +297,7 @@ namespace ProyectoFinalProgra1
                     {
                         Console.WriteLine("Por favor ingrese un digito valido");
                     }
-            } while (continua);
+            
         }       
     }
 }
