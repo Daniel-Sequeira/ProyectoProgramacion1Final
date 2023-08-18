@@ -5,13 +5,13 @@ namespace ProyectoFinalProgra1
 {
     class Program
     {
-        static string pathEmp = @"C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\Archivos\Empleados.txt";
-        static  string pathPlan = @"C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\Archivos\Planilla.txt";
-        static string pathTodos = @"C:\Users\Fabián\Desktop\ProyectoProgramacion1Final\ProyectoFinalProgra1\Archivos\Planilla_del_mes.txt";
+        static string pathEmp = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Empleados.txt";
+        static  string pathPlan = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla.txt";
+        static string pathTodos = @"C:\Users\danie\source\repos\ProFinProg1\ProyectoFinalProgra1\Archivos\Planilla_del_mes.txt";
         static void Main(string[] args)
         {
-
-            List<string> datosEmp = new List<string>(); //Instancias de Listas 
+            //Instancias de Listas para almecenar datos de los txt leidos y nuevos datos mixtos
+            List<string> datosEmp = new List<string>(); 
             List<string> datosPlan = new List<string>();
             List<string> datosFun = new List<string>();
 
@@ -24,7 +24,7 @@ namespace ProyectoFinalProgra1
             datosPlan = lectura.LeerArchivo(pathPlan);
 
             List<string> datosMixtos = new List<string>();
-
+            //Cilco for recorre lista, se almacena en arreglos separado por espacios y rellena nueva lista datos mixtos.
             for (int i = 0; i < datosEmp.Count; i++)
             {
                 string[] arregloEmp = datosEmp[i].Split(" ");
@@ -51,7 +51,7 @@ namespace ProyectoFinalProgra1
 
 
 
-
+         //Etiqueta para retorno a menu principal
         MainMenu:
             bool continua = true;
             do
@@ -277,3 +277,6 @@ namespace ProyectoFinalProgra1
         }       
     }
 }
+       
+    
+
