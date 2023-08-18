@@ -44,6 +44,7 @@ namespace ProyectoFinalProgra1
                   rebajo.ToString() + " " +
                   salNet.ToString()
 
+
                  );
             }
 
