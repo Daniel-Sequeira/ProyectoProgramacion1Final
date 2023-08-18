@@ -121,9 +121,28 @@ Se lee y se descarta la primera línea del archivo. (El encabezado).
   Dentro del bucle, se escribe la cadena actual (dato) en una nueva línea del archivo utilizando el método WriteLine del StreamWriter.
   ## swf.Close();
   cierra para liberar recurso.
-  
 
+  # Validaciónes mediante expresiones regulares (ej. validar una cédula)
 
+    public static bool ValidarCedula(string cedula) //Metodo para verificar el formato correcto de la cedula y el ID
+         {
+             string patron = @"^\d{9}$";
+             return Regex.IsMatch(cedula, patron);
+         }
+
+Toma la cadena cedula como entrada y devuelve un valor booleano (true o false) que indica si la cadena cumple con el formato esperado.
+Utiliza una expresión regular (@"^\d{9}$") para verificar que la cédula contiene exactamente en nueve dígitos (\d representa un dígito y {9} indica que debe haber nueve de ellos).
+La función Regex.IsMatch verifica si la cadena cedula coincide con este patrón.
+
+    public static bool ValidarCorreo(string correo) //Metodo para verificar el formato correcto del correo
+            {
+                string patron = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
+                return Regex.IsMatch(correo, patron);
+            }
+Como en el caso anterior recibe la variable string por parámetro y ejecuta la evaluacion de la misma con
+la expresión regular (@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$") que  verifica que el correo electrónico tenga un formato típico
+(usuario, una arroba, un dominio y un sufijo). 
+La función Regex.IsMatch verifica si la cadena correo coincide con este patrón.
 
 
 
