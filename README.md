@@ -48,6 +48,97 @@ Agregar elementos a una lista.
      miLista.Remove(20); // Eliminará el valor 20 de la lista
      miLista.RemoveAt(0); // Eliminará el primer elemento (10)
 
+   #  Metodo de Lectura de Archivos
+
+    public List<string> LeerArchivo(string path)
+        {
+
+            using (StreamReader sr = new StreamReader(path))
+            {
+                datos = new List<string>();
+                if (File.Exists(path))
+                {
+                    sr.ReadLine();
+                    while (sr.EndOfStream != true)
+                    {
+                        datos.Add(sr.ReadLine());
+                    }
+                    sr.Close();
+                }
+                else
+                    Console.WriteLine("Error No se encuentra el archivo txt en la ruta establecida");
+                return datos;
+            }
+
+        }
+# Explicacion:
+## public List<string> LeerArchivo(string path)
+   - Este es el encabezado del método. Indica que el método es público (puede ser accedido desde fuera de la clase), devuelve una lista de cadenas (`List<string>`), y toma un parámetro llamado `path` de tipo cadena (string), que representa la ruta del archivo que se debe leer.
+## using (StreamReader sr = new StreamReader(path))
+  - Utiliza un bloque `using` para garantizar que el recurso `StreamReader` se maneje adecuadamente y se libere después de su uso. `StreamReader` se utiliza para leer el contenido del archivo. Se crea una nueva instancia de `StreamReader` llamada `sr`, que se inicializa con el archivo cuya ruta es proporcionada como argumento pathEmp o pathPlan o segun corresponda.
+## datos = new List<string>();
+  -Instancia de una lista de cadenas llamada `datos`. Esta lista se utilizará para almacenar las líneas del archivo.
+## if (File.Exists(path))
+  - Se verifica si el archivo especificado en la ruta existe en el sistema de archivos.
+## sr.ReadLine();
+Se lee y se descarta la primera línea del archivo. (El encabezado).
+## while (sr.EndOfStream != true)
+ -Bucle `while` que se ejecutará mientras no se haya llegado al final del archivo
+## datos.Add(sr.ReadLine());
+- Dentro del bucle, se lee una línea del archivo usando `sr.ReadLine()` y se agrega a la lista `datos`.
+## sr.Close();
+  Se ha llegado al final del archivo, se cierra el `StreamReader` para liberar los recursos.
+## else Console.WriteLine("Error No se encuentra el archivo txt en la ruta establecida");
+   - Si el archivo no existe en la ruta proporcionada, se imprime un mensaje de error en la consola.
+##  return datos;
+  - Finalmente, se devuelve la lista `datos` que contiene todas las líneas del archivo.
+
+# Metodo Crear Archivo 
+
+    public void CrearArchivo(string path,List<string>datosP)
+              {
+                 using (StreamWriter swf = File.CreateText(path))
+                 {
+                   foreach (var dato in datosP)
+                   {
+                      swf.WriteLine(dato);
+                   }
+                      swf.Close();
+                 }
+              }
+  
+      }
+  }
+
+  # Explicacion
+  ## public void CrearArchivo(string path, List<string> datosP)
+  El método toma dos argumentos: path, que es la ruta donde se creará el archivo, y datosP, que es una lista de cadenas que contiene los datos que se escribirán en el archivo.
+  ## using (StreamWriter swf = File.CreateText(path))
+  Bloque using para asegurarse de que el recurso StreamWriter se maneje adecuadamente y se libere después de su uso. StreamWriter se usa para escribir en el archivo. Se crea una nueva instancia de StreamWriter llamada swf, y se crea un nuevo archivo de      texto en la ruta especificada (path).
+  ## foreach (var dato in datosP)
+  Bucle foreach que recorre cada elemento de la lista datosP. En cada iteración, la variable dato toma el valor de uno de los elementos de la lista.
+  ## swf.WriteLine(dato);
+  Dentro del bucle, se escribe la cadena actual (dato) en una nueva línea del archivo utilizando el método WriteLine del StreamWriter.
+  ## swf.Close();
+  cierra para liberar recurso.
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
