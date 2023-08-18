@@ -18,7 +18,7 @@ namespace ProyectoFinalProgra1
 
 
             LeerDatos lectura = new LeerDatos(pathEmp, pathPlan, pathTodos); //Instancia de la Clase leer Datos para llamar sus metodos.
-            EscribirDatos escritura = new EscribirDatos(pathEmp, pathPlan);
+            EscribirDatos escritura = new EscribirDatos(pathEmp, pathPlan); // Instancia de la Clase Escribir Datos para llamar sus metodos.
 
             datosEmp = lectura.LeerArchivo(pathEmp); //Almacenar en las listas los datos leidos por metodo LeerArchivo segun path enviado
             datosPlan = lectura.LeerArchivo(pathPlan);
